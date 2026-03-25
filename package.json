@@ -1,0 +1,28 @@
+{
+  "name": "webportfolio",
+  "version": "1.0.0",
+  "description": "Welcome to MyPortfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darwin1682745857/UI-UX.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Darwin1682745857/UI-UX/issues"
+  },
+  "homepage": "https://github.com/Darwin1682745857/UI-UX#readme",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.3"
+  }
+}

@@ -103,7 +103,7 @@
 
 	// Contact form
 	if (contactForm) {
-		contactForm.addEventListener("submit", (e) => {
+		contactForm.addEventListener("submit", async (e) => {
 			e.preventDefault();
 
 			const name = $("input[name=\"name\"]", contactForm)?.value?.trim() || "";
@@ -115,8 +115,30 @@
 				return;
 			}
 
-			contactForm.reset();
-			showToast("Thanks! Your message is ready to send.");
+			const submitBtn = contactForm.querySelector("button[type=\"submit\"]");
+			if (submitBtn) submitBtn.disabled = true;
+
+			try {
+				const response = await fetch("/api/contact", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ name, email, message }),
+				});
+
+				if (!response.ok) {
+					const data = await response.json().catch(() => null);
+					const base = data?.error || "Failed to send message.";
+					const detail = data?.details ? ` (${data.details})` : "";
+					throw new Error(`${base}${detail}`);
+				}
+
+				contactForm.reset();
+				showToast("Thanks! Your message has been sent.");
+			} catch (error) {
+				showToast(error?.message || "Something went wrong. Please try again.");
+			} finally {
+				if (submitBtn) submitBtn.disabled = false;
+			}
 		});
 	}
 
