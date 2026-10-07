@@ -86,19 +86,37 @@
 		const initial = window.location.hash?.startsWith("#") ? window.location.hash.slice(1) : "home";
 		if (byId.has(initial)) setActive(initial);
 
-		const io = new IntersectionObserver(
-			(entries) => {
-				const visible = entries
-					.filter((e) => e.isIntersecting)
-					.sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0));
-				if (visible.length) setActive(visible[0].target.id);
-			},
-			{
-				rootMargin: "-40% 0px -55% 0px",
-				threshold: [0.1, 0.2, 0.35, 0.5, 0.65],
+		const getTopOffset = () => {
+			const topbar = document.querySelector(".topbar");
+			return (topbar?.offsetHeight || 0) + 18;
+		};
+
+		const updateActiveByScroll = () => {
+			const scrollPos = window.scrollY + getTopOffset() + 2;
+			let current = sections[0]?.id;
+
+			for (const section of sections) {
+				if (section.offsetTop <= scrollPos) {
+					current = section.id;
+				} else {
+					break;
+				}
 			}
-		);
-		sections.forEach((s) => io.observe(s));
+
+			if (current) setActive(current);
+		};
+
+		menuLinks.forEach((link) => {
+			link.addEventListener("click", () => {
+				const href = link.getAttribute("href") || "";
+				if (href.startsWith("#")) setActive(href.slice(1));
+			});
+		});
+
+		window.addEventListener("scroll", updateActiveByScroll, { passive: true });
+		window.addEventListener("resize", updateActiveByScroll);
+		window.addEventListener("hashchange", updateActiveByScroll);
+		updateActiveByScroll();
 	}
 
 	// Contact form
@@ -109,9 +127,15 @@
 			const name = $("input[name=\"name\"]", contactForm)?.value?.trim() || "";
 			const email = $("input[name=\"email\"]", contactForm)?.value?.trim() || "";
 			const message = $("textarea[name=\"message\"]", contactForm)?.value?.trim() || "";
+			const endpoint = contactForm.getAttribute("action") || "";
 
 			if (!name || !email || !message) {
 				showToast("Please fill out all fields.");
+				return;
+			}
+
+			if (!endpoint || endpoint.includes("REPLACE_WITH_YOUR_FORM_ID")) {
+				showToast("Please configure the Formspree form ID first.");
 				return;
 			}
 
@@ -119,17 +143,15 @@
 			if (submitBtn) submitBtn.disabled = true;
 
 			try {
-				const response = await fetch("/api/contact", {
+				const response = await fetch(endpoint, {
 					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ name, email, message }),
+					headers: { Accept: "application/json" },
+					body: new FormData(contactForm),
 				});
 
 				if (!response.ok) {
 					const data = await response.json().catch(() => null);
-					const base = data?.error || "Failed to send message.";
-					const detail = data?.details ? ` (${data.details})` : "";
-					throw new Error(`${base}${detail}`);
+					throw new Error(data?.errors?.[0]?.message || data?.error || "Failed to send message.");
 				}
 
 				contactForm.reset();
