@@ -800,53 +800,80 @@ a {
 /* Projects */
 .p {
 	display: grid;
-	gap: 10px;
+	gap: 0;
+	padding: 10px;
+	width: 100%;
+	overflow: hidden;
+	background: #1f2f16;
+	border-color: rgba(31, 47, 22, 0.28);
+	box-shadow: 0 18px 40px rgba(31, 47, 22, 0.16);
+}
+
+#projects .grid-3 {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	justify-content: center;
+	gap: 12px;
 }
 
 .thumb {
-	height: 128px;
-	border-radius: 16px;
-	border: 1px solid rgba(27, 51, 66, 0.16);
+	aspect-ratio: 4 / 5;
+	height: auto;
+	border-radius: 4px 4px 0 0;
+	border: 0;
 	position: relative;
 	overflow: hidden;
 	margin: 0;
-	background: linear-gradient(135deg, rgba(27, 51, 66, 0.14), rgba(20, 184, 166, 0.12));
-}
-
-.thumb::after {
-	content: "";
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(180deg, rgba(18, 24, 30, 0.08), rgba(18, 24, 30, 0.34));
-	pointer-events: none;
+	background: #f3f1ea;
 }
 
 .thumb img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
 	object-position: center;
-	transform: scale(1.02);
+	display: block;
+	transform: scale(1);
 	transition: transform 220ms ease, filter 220ms ease;
 }
 
 .p:hover .thumb img {
-	transform: scale(1.07);
+	transform: scale(1.03);
 }
 
 .thumb.one img {
-	object-position: center 14%;
-	filter: saturate(1.08);
+	filter: none;
 }
 
 .thumb.two img {
-	object-position: center 32%;
-	filter: saturate(0.86) hue-rotate(12deg);
+	filter: none;
 }
 
 .thumb.three img {
-	object-position: center 50%;
-	filter: saturate(0.95) hue-rotate(-8deg) contrast(1.04);
+	filter: none;
+}
+
+.thumb.three {
+	aspect-ratio: 1;
+}
+
+.p .h3 {
+	margin: 0;
+	padding: 12px 2px 4px;
+	color: #f8f3e8;
+	font-size: 1rem;
+	letter-spacing: 0;
+}
+
+@media (max-width: 980px) {
+	#projects .grid-3 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 560px) {
+	#projects .grid-3 {
+		grid-template-columns: minmax(0, 1fr);
+	}
 }
 
 .links {
