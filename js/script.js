@@ -7,8 +7,26 @@
 	const toastEl = $("#toast");
 	const contactForm = $("#contactForm");
 	const yearEl = $("#year");
+	const themeToggle = $("#themeToggle");
 
 	const menuLinks = $$(".a");
+
+	const setTheme = (theme) => {
+		const isDark = theme === "dark";
+		document.documentElement.dataset.theme = isDark ? "dark" : "light";
+		themeToggle?.setAttribute("aria-pressed", String(isDark));
+		themeToggle?.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+		document.querySelector('meta[name="theme-color"]')?.setAttribute("content", isDark ? "#080b0d" : "#D6D9DD");
+	};
+
+	const storedTheme = window.localStorage.getItem("portfolio-theme");
+	setTheme(storedTheme || "light");
+
+	themeToggle?.addEventListener("click", () => {
+		const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+		setTheme(nextTheme);
+		window.localStorage.setItem("portfolio-theme", nextTheme);
+	});
 
 	const setMenuOpen = (open) => {
 		if (!navBtn || !menu) return;
