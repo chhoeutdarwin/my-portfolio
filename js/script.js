@@ -8,8 +8,54 @@
 	const contactForm = $("#contactForm");
 	const yearEl = $("#year");
 	const themeToggle = $("#themeToggle");
+	const projectGrid = $(".project-grid");
+	const projectFilters = $$(".project-filter");
+	const seeMoreProjects = $(".see-more-projects");
 
 	const menuLinks = $$(".a");
+
+	// Project categories
+	if (projectGrid && projectFilters.length && seeMoreProjects) {
+		const projectCards = $$(".p", projectGrid);
+		let activeTab = $(".project-filter.is-active")?.dataset.filter || "poster";
+		let expanded = false;
+
+		const updateProjects = () => {
+			const matchingCards = projectCards.filter((card) => card.dataset.category === activeTab);
+			matchingCards.forEach((card) => {
+				card.hidden = card.classList.contains("project-extra") && !expanded;
+			});
+			projectCards
+				.filter((card) => !matchingCards.includes(card))
+				.forEach((card) => {
+					card.hidden = true;
+				});
+			seeMoreProjects.setAttribute("aria-expanded", String(expanded));
+			seeMoreProjects.innerHTML = expanded
+				? 'Show less <span aria-hidden="true">↑</span>'
+				: 'See more <span aria-hidden="true">↓</span>';
+		};
+
+		projectFilters.forEach((filterButton) => {
+			filterButton.addEventListener("click", () => {
+				activeTab = filterButton.dataset.filter || "";
+				expanded = false;
+				projectFilters.forEach((button) => {
+					const isActive = button === filterButton;
+					button.classList.toggle("is-active", isActive);
+					button.setAttribute("aria-pressed", String(isActive));
+				});
+				updateProjects();
+			});
+		});
+
+		seeMoreProjects.addEventListener("click", () => {
+			expanded = !expanded;
+			updateProjects();
+		});
+
+		updateProjects();
+	}
 
 	const setTheme = (theme) => {
 		const isDark = theme === "dark";

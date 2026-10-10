@@ -36,7 +36,7 @@
 						<ul class="menu" id="menu">
 							<li><a class="a" href="#home">Home</a></li>
 							<li><a class="a" href="#about">About Me</a></li>
-							<li><a class="a" href="#services">What I Build</a></li>
+							<!-- <li><a class="a" href="#services">What I Build</a></li> -->
 							<li><a class="a" href="#experience">Experience</a></li>
 							<li><a class="a" href="#projects">My work</a></li>
 							<li><a class="a" href="#skills">Skills</a></li>
@@ -134,29 +134,6 @@
 				</div>
 			</section>
 
-			<section class="section alt" id="services">
-				<div class="wrap">
-					<div class="head">
-						<h2 class="h2">What I Build</h2>
-						<!-- <p class="sub">Services designed to move from idea to launch with quality and speed.</p> -->
-					</div>
-					<div class="grid-3">
-						<article class="card service">
-							<h3 class="h3">Frontend Sites</h3>
-							<p class="muted">Clean, responsive pages built with modern HTML, CSS, and JavaScript.</p>
-						</article>
-						<article class="card service">
-							<h3 class="h3">UI Engineering</h3>
-							<p class="muted">Component-driven interfaces with consistent spacing and states.</p>
-						</article>
-						<article class="card service">
-							<h3 class="h3">Speed & SEO</h3>
-							<p class="muted">Performance tuning, semantic markup, and accessibility best practices.</p>
-						</article>
-					</div>
-				</div>
-			</section>
-
 			<section class="section" id="experience">
 				<div class="wrap">
 					<div class="head">
@@ -198,62 +175,51 @@
 				<div class="wrap">
 					<div class="head">
 						<h2 class="h2">Recently Worked</h2>
-						<p class="sub">Selected work showing interface quality, responsive behavior, and performance focus.</p>
+						<!-- <h3 class="sub">A selection of my poster, interface, and website work.</p> -->
 					</div>
-					<div class="grid-3">
-						<article class="card p">
+					<div class="project-filters" role="group" aria-label="Filter recent work">
+						<!-- <button class="project-filter is-active" type="button" data-filter="all" aria-pressed="true">All Work</button> -->
+						<button class="project-filter is-active" type="button" data-filter="poster" aria-pressed="true">Poster Design</button>
+						<button class="project-filter" type="button" data-filter="uxui" aria-pressed="false">UX/UI Design</button>
+						<button class="project-filter" type="button" data-filter="website" aria-pressed="false">Website Building</button>
+					</div>
+
+					
+					<div class="grid-3 project-grid">
+						<article class="card p" data-category="poster">
 							<figure class="thumb one">
-								<img src="assets/img/Poster1" alt="Poster design featuring coffee drinks" loading="lazy" />
+								<img src="assets/img/Poster1.jpg" alt="Poster design featuring coffee drinks" loading="lazy" />
 							</figure>
 							<h3 class="h3">Coffee Poster</h3>
 						</article>
-
-						<article class="card p">
+						<article class="card p" data-category="poster">
 							<figure class="thumb two">
-								<img src="assets/img/Poster2.jpg" alt="Poster design for a matcha drink brand" loading="lazy" />
+								<img src="assets/img/Poster2.jpg" alt="Poster design for a coffee brand" loading="lazy" />
 							</figure>
-							<h3 class="h3">Matcha Poster</h3>
+							<h3 class="h3">Coffee Campaign</h3>
 						</article>
-
-						<article class="card p">
-							<figure class="thumb three">
-								<img src="assets/img/Poster3.jpg" alt="Poster design for a matcha drink collection" loading="lazy" />
-							</figure>
-							<h3 class="h3">Matcha Campaign</h3>
-						</article>
-						<article class="card p">
-							<figure class="thumb two">
-								<img src="assets/img/Poster4.jpg" alt="Poster design for a matcha drink brand" loading="lazy" />
-							</figure>
-							<h3 class="h3">Matcha Poster</h3>
-						</article>
-						<article class="card p">
-							<figure class="thumb one">
-								<img src="assets/img/Poster1" alt="Poster design featuring coffee drinks" loading="lazy" />
-							</figure>
-							<h3 class="h3">Coffee Poster</h3>
-						</article>
-
-						<article class="card p">
-							<figure class="thumb two">
-								<img src="assets/img/Poster2.jpg" alt="Poster design for a matcha drink brand" loading="lazy" />
-							</figure>
-							<h3 class="h3">Matcha Poster</h3>
-						</article>
-
-						<article class="card p">
+						<article class="card p" data-category="poster">
 							<figure class="thumb three">
 								<img src="assets/img/Poster2.jpg" alt="Poster design for a matcha drink collection" loading="lazy" />
 							</figure>
 							<h3 class="h3">Matcha Campaign</h3>
 						</article>
-						<article class="card p">
-							<figure class="thumb two">
-								<img src="assets/img/Poster4.jpg" alt="Poster design for a matcha drink brand" loading="lazy" />
+						<article class="card p" data-category="poster">
+							<figure class="thumb three">
+								<img src="assets/img/Poster1.jpg" alt="Poster design for a matcha drink collection" loading="lazy" />
 							</figure>
-							<h3 class="h3">Matcha Poster</h3>
+							<h3 class="h3">Matcha Campaign</h3>
+						</article>
+						<article class="card p" data-category="uxui">
+							<figure class="thumb one">
+								<img src="assets/img/Dashboard.jpg" alt="Dashboard UI/UX design" loading="lazy" />
+							</figure>
+							<h3 class="h3">Dashboard</h3>
 						</article>
 					</div>
+					<button class="see-more-projects" type="button" aria-expanded="false">
+						See more <span aria-hidden="true">↓</span>
+					</button>
 				</div>
 			</section>
 
@@ -261,32 +227,45 @@
 				<div class="wrap">
 					<div class="head">
 						<h2 class="h2">Skills</h2>
-						<p class="sub">Core technologies and tools I rely on for reliable, maintainable output.</p>
+						<p class="sub">Core technologies and tools I use to create reliable, maintainable work.</p>
 					</div>
-					<div class="grid-3">
-						<article class="card">
-							<h3 class="h3">Frontend</h3>
-							<p class="muted">Core web stack for clean, responsive interfaces.</p>
-							<div class="tags" aria-label="Frontend skills">
-								<span>HTML5</span><span>CSS</span><span>JavaScript</span>
-							</div>
-						</article>
-
-						<article class="card">
-							<h3 class="h3">Frameworks & Data</h3>
-							<p class="muted">Building modern apps with scalable tooling.</p>
-							<div class="tags" aria-label="Framework and data skills">
-								<span>Next.js</span><span>MySQL</span>
-							</div>
-						</article>
-
-						<article class="card">
-							<h3 class="h3">Tools</h3>
-							<p class="muted">Design, version control, and creative workflow.</p>
-							<div class="tags" aria-label="Tool skills">
-								<span>Git</span><span>Figma</span><span>Canva</span><span>Photoshop</span>
-							</div>
-						</article>
+					<div class="skill-list" aria-label="Technology skills">
+						<div class="skill-item">
+							<img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" loading="lazy" />
+							<span>HTML5</span>
+						</div>
+						<div class="skill-item">
+							<img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" loading="lazy" />
+							<span>CSS3</span>
+						</div>
+						<div class="skill-item">
+							<img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" loading="lazy" />
+							<span>JavaScript</span>
+						</div>
+						<div class="skill-item">
+							<img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" loading="lazy" />
+							<span>MySQL</span>
+						</div>
+						<div class="skill-item">
+							<img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" loading="lazy" />
+							<span>Git</span>
+						</div>
+						<div class="skill-item">
+							<img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="" loading="lazy" />
+							<span>Figma</span>
+						</div>
+						<div class="skill-item">
+							<img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-plain.svg" alt="" loading="lazy" />
+							<span>Photoshop</span>
+						</div>
+						<div class="skill-item">
+							<img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="" loading="lazy" />
+							<span>Canva</span>
+						</div>
+						<div class="skill-item">
+							<img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="" loading="lazy" />
+							<span>VS Code</span>
+						</div>
 					</div>
 				</div>
 			</section>
