@@ -407,6 +407,7 @@ a {
 .hero {
 	position: relative;
 	padding: 54px 0 22px;
+	border-bottom: 1px solid var(--stroke);
 }
 
 .hero-grid {
@@ -646,12 +647,7 @@ a {
 /* Sections */
 .section {
 	padding: 56px 0;
-}
-
-.section.alt {
-	background: linear-gradient(180deg, rgba(27, 51, 66, 0.06), rgba(255, 255, 255, 0.00));
-	border-top: 1px solid rgba(27, 51, 66, 0.12);
-	border-bottom: 1px solid rgba(27, 51, 66, 0.10);
+	border-bottom: 1px solid var(--stroke);
 }
 
 .head {
@@ -687,6 +683,94 @@ a {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 14px;
+}
+
+/* .experience-grid {
+	align-items: stretch;
+	gap: 24px;
+} */
+.experience-grid {
+	grid-template-columns: 1.2fr 0.6fr;  /* card ធំជាង រូបតូចជាង */
+	align-items: stretch;
+	gap: 20px;
+}
+.experience-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.experience-card ul {
+	padding-left: 22px;
+}
+
+/* .experience-card .tags {
+	margin-top: auto;
+} */
+
+.experience-card .tags {
+	margin-top: 18px;   /* ជិត list វិញ */
+}
+.experience-art {
+	position: relative;
+	min-height: 390px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 18px;
+	isolation: isolate;
+	overflow: visible;
+}
+
+.experience-art-shape {
+	display: none;
+}
+
+.experience-art-frame {
+	position: relative;
+	z-index: 1;
+	width: min(255px, 62%);
+	aspect-ratio: 1 / 1.12;
+	margin: 0;
+	overflow: hidden;
+	border: 10px solid rgba(255, 255, 255, 0.82);
+	border-radius: 34px;
+	background: #f5f5f2;
+	box-shadow: 0 22px 42px rgba(6, 19, 26, 0.28);
+	transform: rotate(-3deg);
+}
+
+.experience-art-frame img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	object-position: center top;
+}
+
+.experience-art-caption {
+	position: static;
+	z-index: 2;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 12px;
+	border: 1px solid rgba(31, 41, 55, 0.12);
+	border-radius: 999px;
+	background: rgba(74, 81, 88, 0.86);
+	color: #ffffff;
+	font: 600 0.74rem "Outfit", system-ui, sans-serif;
+	backdrop-filter: blur(8px);
+}
+
+.experience-art-dot {
+	width: 7px;
+	height: 7px;
+	flex: 0 0 auto;
+	border-radius: 50%;
+	background: #5eead4;
+	box-shadow: 0 0 0 4px rgba(94, 234, 212, 0.15);
 }
 
 .card {
@@ -729,7 +813,7 @@ a {
 }
 
 .about-list li::marker {
-	color: rgba(20, 184, 166, 0.9);
+	color: black;
 	font-size: 1.15em;
 }
 
@@ -1298,11 +1382,6 @@ body.lightbox-open {
 	background: rgba(240, 237, 229, 0.12);
 }
 
-:root[data-theme="dark"] .section.alt {
-	background: linear-gradient(180deg, rgba(0, 20, 19, 0.18), transparent);
-	border-color: rgba(240, 237, 229, 0.12);
-}
-
 :root[data-theme="dark"] .about-card {
 	background:
 		radial-gradient(420px 220px at 18% 20%, rgba(11, 107, 100, 0.24), transparent 58%),
@@ -1475,6 +1554,10 @@ body {
 
 	.grid-2 {
 		grid-template-columns: 1fr;
+	}
+
+	.experience-art {
+		min-height: 340px;
 	}
 
 	.frame {
