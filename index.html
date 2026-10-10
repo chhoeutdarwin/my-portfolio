@@ -183,12 +183,14 @@
 						<button class="project-filter" type="button" data-filter="uxui" aria-pressed="false">UX/UI Design</button>
 						<button class="project-filter" type="button" data-filter="website" aria-pressed="false">Website Building</button>
 					</div>
+					
 					<div class="grid-3 project-grid">
 						<article class="card p" data-category="poster">
 							<figure class="thumb one">
 								<img src="assets/img/Poster1.jpg" alt="Poster design featuring coffee drinks" loading="lazy" />
 							</figure>
-							<h3 class="h3">Coffee Poster</h3>
+							<h3 class="h3">Coffee Poster (Click to enlarge) </h3>
+						
 						</article>
 						<article class="card p" data-category="poster">
 							<figure class="thumb two">
@@ -248,13 +250,26 @@
 							<figure class="thumb one">
 								<img src="assets/img/Dash.jpg" alt="Dashboard UI/UX design" loading="lazy" />
 							</figure>
-							<h3 class="h3">Dashboard</h3>
+							
 						</article>
+						
 
 
 
 						<!-- extra project for UX/UI  UIUX Adding Feature 
 						<article class="card p project-extra" data-category="uxui">-->
+						<article class="card p project-extra" data-category="uxui">
+							<figure class="thumb one">
+								<img src="assets/img/Dash.jpg" alt="Poster design for a new campaign" loading="lazy" />
+							</figure>
+							<h3 class="h3">New Poster</h3>
+						</article>
+						<article class="card p project-extra" data-category="uxui">
+							<figure class="thumb one">
+								<img src="assets/img/Dash.jpg" alt="Poster design for a new campaign" loading="lazy" />
+							</figure>
+							<h3 class="h3">New Poster</h3>
+						</article>	
 						<article class="card p project-extra" data-category="uxui">
 							<figure class="thumb one">
 								<img src="assets/img/Dash.jpg" alt="Poster design for a new campaign" loading="lazy" />
@@ -400,6 +415,16 @@
 		</footer>
 
 		<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+		<div class="project-lightbox" id="projectLightbox" hidden>
+			<div class="project-lightbox-backdrop" data-lightbox-close></div>
+			<div class="project-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+				<button class="project-lightbox-close" type="button" aria-label="Close project preview" data-lightbox-close>
+					<span aria-hidden="true">×</span>
+				</button>
+				<img class="project-lightbox-image" id="lightboxImage" src="" alt="" />
+				<h2 class="project-lightbox-title" id="lightboxTitle"></h2>
+			</div>
+		</div>
 		<script src="js/script.js" defer></script>
 		
 	</body>

@@ -11,6 +11,10 @@
 	const projectGrid = $(".project-grid");
 	const projectFilters = $$(".project-filter");
 	const seeMoreProjects = $(".see-more-projects");
+	const projectLightbox = $("#projectLightbox");
+	const lightboxImage = $("#lightboxImage");
+	const lightboxTitle = $("#lightboxTitle");
+	const lightboxClose = $(".project-lightbox-close", projectLightbox);
 
 	const menuLinks = $$(".a");
 
@@ -55,6 +59,57 @@
 		});
 
 		updateProjects();
+	}
+
+	if (projectGrid && projectLightbox && lightboxImage && lightboxTitle) {
+		const projectCards = $$(".p", projectGrid);
+		let lastFocusedCard = null;
+
+		const closeLightbox = () => {
+			projectLightbox.classList.remove("is-open");
+			window.setTimeout(() => {
+				if (!projectLightbox.classList.contains("is-open")) {
+					projectLightbox.hidden = true;
+				}
+			}, 180);
+			document.body.classList.remove("lightbox-open");
+			lastFocusedCard?.focus();
+		};
+
+		const openLightbox = (card) => {
+			const image = $("img", card);
+			const title = $(".h3", card);
+			if (!image || !title) return;
+
+			lastFocusedCard = card;
+			lightboxImage.src = image.currentSrc || image.src;
+			lightboxImage.alt = image.alt;
+			lightboxTitle.textContent = title.textContent.trim();
+			projectLightbox.hidden = false;
+			document.body.classList.add("lightbox-open");
+			window.requestAnimationFrame(() => projectLightbox.classList.add("is-open"));
+			lightboxClose?.focus();
+		};
+
+		projectCards.forEach((card) => {
+			card.setAttribute("tabindex", "0");
+			card.setAttribute("role", "button");
+			card.setAttribute("aria-label", `Open ${$(".h3", card)?.textContent.trim() || "project"} preview`);
+			card.addEventListener("click", () => openLightbox(card));
+			card.addEventListener("keydown", (event) => {
+				if (event.key === "Enter" || event.key === " ") {
+					event.preventDefault();
+					openLightbox(card);
+				}
+			});
+		});
+
+		projectLightbox.querySelectorAll("[data-lightbox-close]").forEach((element) => {
+			element.addEventListener("click", closeLightbox);
+		});
+		document.addEventListener("keydown", (event) => {
+			if (event.key === "Escape" && !projectLightbox.hidden) closeLightbox();
+		});
 	}
 
 	const setTheme = (theme) => {

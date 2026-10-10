@@ -928,6 +928,105 @@ a {
 	transform: scale(1.03);
 }
 
+.p {
+	cursor: pointer;
+}
+
+.p:focus-visible {
+	outline: 3px solid rgba(20, 184, 166, 0.68);
+	outline-offset: 4px;
+}
+
+body.lightbox-open {
+	overflow: hidden;
+}
+
+.project-lightbox[hidden] {
+	display: none;
+}
+
+.project-lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+	display: grid;
+	place-items: center;
+	padding: 24px;
+	opacity: 0;
+	transition: opacity 180ms ease;
+}
+
+.project-lightbox.is-open {
+	opacity: 1;
+}
+
+.project-lightbox-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(5, 15, 20, 0.82);
+	backdrop-filter: blur(8px);
+}
+
+.project-lightbox-dialog {
+	position: relative;
+	z-index: 1;
+	display: grid;
+	justify-items: center;
+	gap: 16px;
+	width: min(920px, 100%);
+	max-height: calc(100vh - 48px);
+	padding: 22px;
+	border: 1px solid rgba(94, 234, 212, 0.28);
+	border-radius: 22px;
+	background: rgba(15, 35, 42, 0.96);
+	box-shadow: 0 28px 90px rgba(0, 0, 0, 0.5);
+	transform: translateY(10px) scale(0.98);
+	transition: transform 180ms ease;
+}
+
+.project-lightbox.is-open .project-lightbox-dialog {
+	transform: translateY(0) scale(1);
+}
+
+.project-lightbox-image {
+	display: block;
+	width: 100%;
+	max-height: calc(100vh - 150px);
+	object-fit: contain;
+	border-radius: 12px;
+}
+
+.project-lightbox-title {
+	margin: 0;
+	color: #d7f2e8;
+	font: 800 1.2rem "Outfit", system-ui, sans-serif;
+	text-align: center;
+}
+
+.project-lightbox-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 2;
+	display: grid;
+	place-items: center;
+	width: 38px;
+	height: 38px;
+	border: 1px solid rgba(94, 234, 212, 0.34);
+	border-radius: 50%;
+	background: rgba(7, 59, 56, 0.94);
+	color: #d7f2e8;
+	font-size: 1.65rem;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.project-lightbox-close:hover,
+.project-lightbox-close:focus-visible {
+	background: rgba(13, 148, 136, 0.9);
+	outline: none;
+}
+
 .thumb.one img {
 	filter: none;
 }
@@ -955,6 +1054,15 @@ a {
 }
 
 @media (max-width: 560px) {
+	.project-lightbox {
+		padding: 12px;
+	}
+
+	.project-lightbox-dialog {
+		padding: 14px;
+		border-radius: 16px;
+	}
+
 	.skill-list {
 		justify-content: center;
 		gap: 22px 18px;
