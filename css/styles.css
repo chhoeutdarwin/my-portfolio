@@ -1036,6 +1036,22 @@ a {
 	letter-spacing: 0;
 }
 
+.p .project-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 0 2px 6px;
+	color: var(--accent-text);
+	font: 700 0.85rem "Outfit", system-ui, sans-serif;
+	text-decoration: none;
+}
+
+.p .project-link:hover,
+.p .project-link:focus-visible {
+	text-decoration: underline;
+	outline: none;
+}
+
 /* Lightbox (always dark) */
 body.lightbox-open {
 	overflow: hidden;
