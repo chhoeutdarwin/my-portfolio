@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Case Study Template – Chhoeut Darwin</title>
+  <link rel="icon" href="../assets/img/pfp.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#ded8cc;--card:#fff;--text:#1f2937;--muted:#5b554f;--accent:#0f766e;--line:rgba(31,41,55,.14)}
+    @media (prefers-color-scheme:dark){:root{--bg:#10151b;--card:#18202a;--text:#e8edf2;--muted:#a3adb8;--accent:#5eead4;--line:rgba(255,255,255,.14)}}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,sans-serif;line-height:1.7}
+    .wrap{width:min(820px,100% - 32px);margin:0 auto;padding:32px 0 64px}
+    a{color:var(--accent)}
+    .back{display:inline-block;margin-bottom:20px;font-weight:600;text-decoration:none}
+    h1{font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.2;margin:0 0 8px}
+    .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0 28px;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+    .meta b{display:block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+    .cover{width:100%;border-radius:14px;border:1px solid var(--line);background:var(--card)}
+    section{margin-top:36px}
+    h2{font-size:1.3rem;margin:0 0 8px}
+    h2 .n{display:inline-grid;place-items:center;width:30px;height:30px;margin-right:10px;border-radius:50%;background:var(--accent);color:var(--bg);font-size:.9rem}
+    p,li{color:var(--muted)}
+    .hint{font-size:.85rem;color:var(--accent);font-weight:600}
+    figure{margin:14px 0}
+    figure img{width:100%;border-radius:12px;border:1px solid var(--line)}
+    figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
+    iframe{width:100%;height:520px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+    .cta{display:inline-block;margin-top:10px;padding:10px 16px;border-radius:999px;background:var(--accent);color:var(--bg);font-weight:700;text-decoration:none}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../index.html#projects">&larr; Back to portfolio</a>
+
+  <!-- HOW TO USE: 1) Copy this file, rename it (e.g. attendance-dashboard.html). 2) Replace every text marked "EDIT".
+       3) Export frames from Figma as PNG (Right-click frame > Copy/Paste as PNG or Export 2x) into assets/img/ and point <img> to them.
+       4) Delete this comment and the <meta name="robots"> line when the page is ready. -->
+
+  <h1>Project Name <!-- EDIT --></h1>
+  <p>One sentence: what is it and who is it for? <!-- EDIT --></p>
+
+  <div class="meta">
+    <div><b>Role</b>UX/UI Designer <!-- EDIT --></div>
+    <div><b>Tools</b>Figma <!-- EDIT --></div>
+    <div><b>Timeline</b>2 weeks <!-- EDIT --></div>
+    <div><b>Type</b>Web dashboard <!-- EDIT --></div>
+  </div>
+
+  <img class="cover" src="../assets/img/Dash.jpg" alt="Project cover" /> <!-- EDIT: your own cover -->
+
+  <section>
+    <h2><span class="n">1</span>Overview</h2>
+    <p>What was the project and what was your part? Keep it to 2-3 lines. <!-- EDIT --></p>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Problem</h2>
+    <p>What problem do users have? Example: "Staff track attendance on paper, so late arrivals are hard to count." <!-- EDIT --></p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Goals</h2>
+    <ul>
+      <li>Goal 1 <!-- EDIT --></li>
+      <li>Goal 2 <!-- EDIT --></li>
+      <li>Goal 3 <!-- EDIT --></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Research</h2>
+    <p>Who are the users? What did you learn (talking to people, looking at similar apps)? 3 short bullet points is enough. <!-- EDIT --></p>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>Wireframes &amp; ideas</h2>
+    <p>Show your early sketches or low-fidelity frames and explain one decision you made. <!-- EDIT --></p>
+    <figure>
+      <img src="../assets/img/Dash.jpg" alt="Wireframe" /> <!-- EDIT: wireframe screenshot -->
+      <figcaption>Wireframe: short caption <!-- EDIT --></figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>Final UI</h2>
+    <p>Show 2-4 final screens. Mention colours, fonts and why you chose them. <!-- EDIT --></p>
+    <figure>
+      <img src="../assets/img/Dashboard.jpg" alt="Final UI" /> <!-- EDIT: final screen -->
+      <figcaption>Final design: short caption <!-- EDIT --></figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span>Prototype</h2>
+    <p>Figma file: Share &gt; set to "Anyone with the link can view", then paste the link below.</p>
+    <a class="cta" href="PASTE-YOUR-FIGMA-SHARE-LINK" target="_blank" rel="noopener noreferrer">Open Figma prototype &nearr;</a>
+    <!-- Optional embed (replace the encoded url with your own Figma share link):
+    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FYOUR_FILE_KEY" allowfullscreen></iframe> -->
+  </section>
+
+  <section>
+    <h2><span class="n">8</span>Result &amp; what I learned</h2>
+    <p>What did you finish? What would you improve next time? Be honest: only write results you really have. <!-- EDIT --></p>
+  </section>
+</div>
+</body>
+</html>

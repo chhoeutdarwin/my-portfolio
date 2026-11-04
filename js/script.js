@@ -34,6 +34,7 @@
 				.forEach((card) => {
 					card.hidden = true;
 				});
+			seeMoreProjects.hidden = !matchingCards.some((card) => card.classList.contains("project-extra"));
 			seeMoreProjects.setAttribute("aria-expanded", String(expanded));
 			seeMoreProjects.innerHTML = expanded
 				? 'Show less <span aria-hidden="true">↑</span>'
@@ -95,8 +96,12 @@
 			card.setAttribute("tabindex", "0");
 			card.setAttribute("role", "button");
 			card.setAttribute("aria-label", `Open ${$(".h3", card)?.textContent.trim() || "project"} preview`);
-			card.addEventListener("click", () => openLightbox(card));
+			card.addEventListener("click", (event) => {
+				if (event.target.closest("a")) return;
+				openLightbox(card);
+			});
 			card.addEventListener("keydown", (event) => {
+				if (event.target.closest("a")) return;
 				if (event.key === "Enter" || event.key === " ") {
 					event.preventDefault();
 					openLightbox(card);

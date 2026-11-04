@@ -1036,6 +1036,41 @@ a {
 	letter-spacing: 0;
 }
 
+.project-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	padding: 8px 2px 2px;
+}
+
+.project-links a {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 6px 10px;
+	border: 1px solid var(--accent-line);
+	border-radius: 999px;
+	background: var(--accent-soft);
+	color: var(--accent-text);
+	font-size: 0.82rem;
+	font-weight: 700;
+	text-decoration: none;
+	transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+	border-color: var(--accent);
+	background: var(--accent-line);
+	text-decoration: none;
+	transform: translateY(-1px);
+}
+
+.project-links a span {
+	font-size: 1rem;
+	line-height: 1;
+}
+
 /* Lightbox (always dark) */
 body.lightbox-open {
 	overflow: hidden;
@@ -1411,4 +1446,150 @@ body.lightbox-open {
 	.card {
 		transition: none;
 	}
+}
+/* ==========================================
+   COMPACT SKILLS SECTION DESIGN
+   ========================================== */
+
+.skills-grid {
+    display: grid;
+    /* កំណត់ឱ្យមាន 5 ຖັນក្នុងមួយជួរនៅលើអេក្រង់ធំ */
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    max-width: 950px; /* កំណត់ប្រវែងMaxWidth មិនឱ្យវាទូលាយពេក */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* សម្រាប់អេក្រង់ទូរស័ព្ទ (Mobile Responsive) ឱ្យវាធ្លាក់មកសល់ 2 ឬ 3 វិញ ដើម្បីកុំឱ្យចង្អៀត */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    /* កាត់បន្ថយ Padding ខាងក្នុងប្រអប់ឱ្យតូចស្អាត មិនបាច់សល់ចន្លោះធំពេក */
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.skill-icon-wrapper {
+    width: 42px; /* បង្រួមទំហំ Icon ឱ្យតូចល្មមស្អាត */
+    height: 42px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+    padding: 6px;
+}
+
+.skill-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.skill-name {
+    font-size: 0.95rem; /* បង្រួមទំហំអក្សរចំណងជើងបន្តិច */
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+.skill-tag {
+    font-size: 0.65rem; /* បង្រួមป้าย Tag ឱ្យតូចសមរម្យ */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background: rgba(0, 0, 0, 0.05);
+    color: #4b5563;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+/* Hover Effect: ពេលเอา Mouse ထိ */
+.skill-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.skill-card:hover .skill-icon-wrapper {
+    transform: scale(1.08);
+}
+
+:root[data-theme="dark"] .skill-card {
+    background: var(--card-a);
+    border-color: var(--stroke);
+    box-shadow: var(--card-shadow);
+}
+
+:root[data-theme="dark"] .skill-card:hover {
+    background: var(--card-b);
+    border-color: var(--accent-line);
+    box-shadow: var(--shadow2);
+}
+
+:root[data-theme="dark"] .skill-icon-wrapper {
+    background: var(--input-bg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+}
+
+:root[data-theme="dark"] .skill-name {
+    color: var(--text);
+}
+
+:root[data-theme="dark"] .skill-tag {
+    background: var(--accent-soft);
+    color: var(--muted);
+}
+
+
+/* ===== Case-study cards (UX/UI tab) ===== */
+.see-more-projects[hidden] {
+	display: none;
+}
+
+.p .case-meta {
+	margin: 0;
+	padding: 0 2px;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	color: var(--accent-text);
+}
+
+.p .case-summary {
+	margin: 4px 0 0;
+	padding: 0 2px;
+	font-size: 0.86rem;
+	line-height: 1.45;
+	color: var(--muted2);
+}
+
+.project-links .chip-soon {
+	display: inline-flex;
+	align-items: center;
+	padding: 6px 10px;
+	border: 1px dashed var(--stroke2);
+	border-radius: 999px;
+	font-size: 0.78rem;
+	font-weight: 600;
+	color: var(--muted2);
 }
