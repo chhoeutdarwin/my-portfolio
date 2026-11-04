@@ -125,13 +125,13 @@
 		document.querySelector('meta[name="theme-color"]')?.setAttribute("content", isDark ? "#080b0d" : "#D6D9DD");
 	};
 
-	const storedTheme = window.localStorage.getItem("portfolio-theme");
-	setTheme(storedTheme || "light");
+	const storedTheme = window.localStorage.getItem("theme");
+	setTheme(storedTheme || "dark");
 
 	themeToggle?.addEventListener("click", () => {
 		const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
 		setTheme(nextTheme);
-		window.localStorage.setItem("portfolio-theme", nextTheme);
+		window.localStorage.setItem("theme", nextTheme);
 	});
 
 	const setMenuOpen = (open) => {
