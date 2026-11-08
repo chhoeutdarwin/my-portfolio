@@ -59,13 +59,13 @@
 
 /* ---------- Design tokens: dark ---------- */
 :root[data-theme="dark"] {
-	--bg: #0b1013;
+	--bg: #080D19;
 	--card-a: rgba(22, 34, 37, 0.98);
 	--card-b: rgba(17, 26, 29, 0.92);
 	--pill-bg: rgba(240, 247, 243, 0.08);
 	--input-bg: rgba(0, 20, 20, 0.45);
-	--topbar-bg: rgba(8, 11, 13, 0.92);
-	--nav-bg: rgba(22, 34, 37, 0.96);
+	--topbar-bg: #080d19;
+	--nav-bg: rgba(4, 33, 42, 0.96);
 	--menu-bg: rgba(17, 26, 29, 0.98);
 	--frame-inner: linear-gradient(180deg, rgba(22, 34, 37, 0.96), rgba(17, 26, 29, 0.9));
 	--grid-line: rgba(240, 247, 243, 0.06);
@@ -1032,6 +1032,19 @@ a {
 	letter-spacing: 0;
 }
 
+.poster-card img {
+	width: 100%;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	object-position: center top;
+	display: block;
+	border-radius: 12px;
+}
+
+.poster-card .card-title {
+	margin-top: 12px;
+}
+
 .project-links {
 	display: flex;
 	flex-wrap: wrap;
@@ -1132,6 +1145,17 @@ body.lightbox-open {
 	color: #d7f2e8;
 	font: 800 1.2rem "Outfit", system-ui, sans-serif;
 	text-align: center;
+}
+
+.project-lightbox-caption {
+	margin: -8px 0 0;
+	color: rgba(215, 242, 232, 0.78);
+	font-size: 0.9rem;
+	text-align: center;
+}
+
+.project-lightbox-caption[hidden] {
+	display: none;
 }
 
 .project-lightbox-close {

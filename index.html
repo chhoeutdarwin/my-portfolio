@@ -191,18 +191,26 @@
 						<!-- <button class="project-filter is-active" type="button" data-filter="all" aria-pressed="true">All Work</button> -->
 						<button class="project-filter is-active" type="button" data-filter="poster" aria-pressed="true">Poster Design</button>
 						<button class="project-filter" type="button" data-filter="uxui" aria-pressed="false">UX/UI Design</button>
-						<button class="project-filter" type="button" data-filter="website" aria-pressed="false">Website Building</button>
+						<button class="project-filter" type="button" data-filter="website" aria-pressed="false">Web Development</button>
 					</div>
 					<h5 class="tip"> Tip: Click images to enlarge, or visit GitHub for full details.</h5>
 					<div class="grid-3 project-grid">
 
             <!-- ============ TAB 1: POSTER DESIGN ============
                  EDIT: replace the image (assets/img/...) and the title. Keep class="card p" data-category="poster". -->
-            <article class="card p" data-category="poster">
+            <article class="card p poster-card" data-category="poster">
               <figure class="thumb one">
-                <img src="assets/img/Poster1.jpg" alt="Food campaign poster" loading="lazy" />
+                <img
+                  src="assets/img/haaland_Poster.jpg"
+                  alt="Football player poster design featuring Haaland in a Manchester City kit, blue gradient background with large vertical typography"
+                  loading="lazy"
+                  width="1200"
+                  height="1697"
+                  data-title="Sports Poster Design"
+                  data-caption="Sports poster built on contrast and depth: layered cutout, soft shadows, bold type. Fan-made, non-commercial."
+                />
               </figure>
-              <h3 class="h3">Food Campaign Poster</h3>
+              <h3 class="h3 card-title">Football Player Poster</h3>
             </article>
             <article class="card p" data-category="poster">
               <figure class="thumb two">
@@ -269,7 +277,7 @@
               </div>
             </article>
 
-            <!-- ============ TAB 3: WEBSITE BUILDING ============
+            <!-- ============ TAB 3: Web Development ============
                  EDIT: title, image, Live demo + GitHub links. Add more cards by copying one <article>. -->
             <article class="card p" data-category="website">
               <figure class="thumb one">
@@ -283,7 +291,7 @@
             </article>
             <article class="card p" data-category="website">
               <figure class="thumb one">
-                <img src="assets/img/att-tracker.png" alt="Attendance Tracker website" loading="lazy" />
+                <img src="assets/img/tracker.png" alt="Attendance Tracker website" loading="lazy" />
               </figure>
               <h3 class="h3">Attendance Tracker</h3>
               <div class="project-links">
@@ -494,6 +502,7 @@
 				</button>
 				<img class="project-lightbox-image" id="lightboxImage" src="" alt="" />
 				<h2 class="project-lightbox-title" id="lightboxTitle"></h2>
+				<p class="project-lightbox-caption" id="lightboxCaption"></p>
 			</div>
 		</div>
 		<script src="js/script.js" defer></script>

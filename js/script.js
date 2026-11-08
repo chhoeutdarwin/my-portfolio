@@ -14,6 +14,7 @@
 	const projectLightbox = $("#projectLightbox");
 	const lightboxImage = $("#lightboxImage");
 	const lightboxTitle = $("#lightboxTitle");
+	const lightboxCaption = $("#lightboxCaption");
 	const lightboxClose = $(".project-lightbox-close", projectLightbox);
 
 	const menuLinks = $$(".a");
@@ -85,7 +86,11 @@
 			lastFocusedCard = card;
 			lightboxImage.src = image.currentSrc || image.src;
 			lightboxImage.alt = image.alt;
-			lightboxTitle.textContent = title.textContent.trim();
+			lightboxTitle.textContent = image.dataset.title || title.textContent.trim();
+			if (lightboxCaption) {
+				lightboxCaption.textContent = image.dataset.caption || "";
+				lightboxCaption.hidden = !image.dataset.caption;
+			}
 			projectLightbox.hidden = false;
 			document.body.classList.add("lightbox-open");
 			window.requestAnimationFrame(() => projectLightbox.classList.add("is-open"));
