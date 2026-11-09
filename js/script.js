@@ -39,7 +39,7 @@
 			seeMoreProjects.setAttribute("aria-expanded", String(expanded));
 			seeMoreProjects.innerHTML = expanded
 				? 'Show less <span aria-hidden="true">↑</span>'
-				: 'See more <span aria-hidden="true">↓</span>';
+				: 'See More  <span aria-hidden="true">↓</span>';
 		};
 
 		projectFilters.forEach((filterButton) => {
