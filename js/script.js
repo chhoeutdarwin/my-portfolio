@@ -8,6 +8,7 @@
 	const contactForm = $("#contactForm");
 	const yearEl = $("#year");
 	const themeToggle = $("#themeToggle");
+	const kineticReplay = $(".kinetic-replay");
 	const projectGrid = $(".project-grid");
 	const projectFilters = $$(".project-filter");
 	const seeMoreProjects = $(".see-more-projects");
@@ -98,6 +99,7 @@
 		};
 
 		projectCards.forEach((card) => {
+			if ($(".project-links a", card)) return;
 			card.setAttribute("tabindex", "0");
 			card.setAttribute("role", "button");
 			card.setAttribute("aria-label", `Open ${$(".h3", card)?.textContent.trim() || "project"} preview`);
@@ -127,16 +129,21 @@
 		document.documentElement.dataset.theme = isDark ? "dark" : "light";
 		themeToggle?.setAttribute("aria-pressed", String(isDark));
 		themeToggle?.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-		document.querySelector('meta[name="theme-color"]')?.setAttribute("content", isDark ? "#080b0d" : "#D6D9DD");
+		document.querySelector('meta[name="theme-color"]')?.setAttribute("content", isDark ? "#0e1625" : "#D6D9DD");
 	};
 
-	const storedTheme = window.localStorage.getItem("theme");
+	let storedTheme = null;
+	try {
+		storedTheme = window.localStorage.getItem("theme");
+	} catch {}
 	setTheme(storedTheme || "dark");
 
 	themeToggle?.addEventListener("click", () => {
 		const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
 		setTheme(nextTheme);
-		window.localStorage.setItem("theme", nextTheme);
+		try {
+			window.localStorage.setItem("theme", nextTheme);
+		} catch {}
 	});
 
 	const setMenuOpen = (open) => {
@@ -292,6 +299,73 @@
 			}
 		});
 	}
+
+	// Kinetic type: split the name into letters
+	const nameEl = $(".hero .name");
+	const titleAccent = $(".hero .title-accent");
+	const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	let typewriterTimer;
+	const animateName = () => {
+		if (!nameEl) return;
+		const text = nameEl.dataset.text || nameEl.textContent.trim();
+		nameEl.dataset.text = text;
+		if (reduceMotion) {
+			nameEl.textContent = text;
+			return;
+		}
+
+		let i = 0;
+		const words = text
+			.split(" ")
+			.map(
+				(word) =>
+					`<span class="word">${[...word].map((character) => `<span class="ch" style="--i:${i++}">${character}</span>`).join("")}</span>`
+			)
+			.join(" ");
+		nameEl.innerHTML = `<span class="sr">${text}</span><span aria-hidden="true">${words}</span>`;
+	};
+
+	const animateTitle = () => {
+		if (!titleAccent) return;
+		const text = titleAccent.dataset.text || titleAccent.textContent.trim();
+		titleAccent.dataset.text = text;
+		window.clearTimeout(typewriterTimer);
+		if (reduceMotion) {
+			titleAccent.textContent = text;
+			return;
+		}
+
+		titleAccent.classList.add("is-typing");
+		titleAccent.innerHTML = `<span class="sr">${text}</span><span aria-hidden="true">${[...text]
+			.map((character, index) => `<span class="kinetic-letter" style="--i:${index}">${character === " " ? "&nbsp;" : character}</span>`)
+			.join("")}</span>`;
+
+		const letters = $$(".title-accent .kinetic-letter");
+		let visibleCount = 0;
+		const typeNextLetter = () => {
+			if (visibleCount >= letters.length) {
+				typewriterTimer = window.setTimeout(() => {
+					letters.forEach((letter) => letter.classList.remove("is-visible"));
+					visibleCount = 0;
+					typewriterTimer = window.setTimeout(typeNextLetter, 180);
+				}, 1400);
+				return;
+			}
+
+			letters[visibleCount].classList.add("is-visible");
+			visibleCount += 1;
+			typewriterTimer = window.setTimeout(typeNextLetter, 85);
+		};
+
+		typeNextLetter();
+	};
+
+	animateName();
+	animateTitle();
+	kineticReplay?.addEventListener("click", () => {
+		animateName();
+		animateTitle();
+	});
 
 	// Year
 	if (yearEl) {
