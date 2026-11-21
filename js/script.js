@@ -7,7 +7,6 @@
 	const toastEl = $("#toast");
 	const contactForm = $("#contactForm");
 	const yearEl = $("#year");
-	const themeToggle = $("#themeToggle");
 	const kineticReplay = $(".kinetic-replay");
 	const projectGrid = $(".project-grid");
 	const projectFilters = $$(".project-filter");
@@ -124,28 +123,6 @@
 		});
 	}
 
-	const setTheme = (theme) => {
-		const isDark = theme === "dark";
-		document.documentElement.dataset.theme = isDark ? "dark" : "light";
-		themeToggle?.setAttribute("aria-pressed", String(isDark));
-		themeToggle?.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-		document.querySelector('meta[name="theme-color"]')?.setAttribute("content", isDark ? "#0e1625" : "#D6D9DD");
-	};
-
-	let storedTheme = null;
-	try {
-		storedTheme = window.localStorage.getItem("theme");
-	} catch {}
-	setTheme(storedTheme || "dark");
-
-	themeToggle?.addEventListener("click", () => {
-		const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-		setTheme(nextTheme);
-		try {
-			window.localStorage.setItem("theme", nextTheme);
-		} catch {}
-	});
-
 	const setMenuOpen = (open) => {
 		if (!navBtn || !menu) return;
 		navBtn.setAttribute("aria-expanded", String(open));
@@ -180,24 +157,31 @@
 		});
 	}
 
-	// Reveal-on-scroll (subtle)
-	const revealTargets = $$(".hero-left, .frame, .card");
-	revealTargets.forEach((el) => el.classList.add("reveal"));
+	// Reveal-on-scroll (subtle and staggered)
+	const revealTargets = $$(".hero-left, .frame, .section .head, .section .project-filters, .section .card, .skills-grid > *, .hero-meta, .cta, .hero-social");
+	revealTargets.forEach((el, index) => {
+		el.classList.add("reveal");
+		el.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
+	});
 
 	const revealEls = $$(".reveal");
 	if (revealEls.length) {
-		const io = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add("on");
-						io.unobserve(entry.target);
-					}
-				});
-			},
-			{ threshold: 0.14 }
-		);
-		revealEls.forEach((el) => io.observe(el));
+		if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+			revealEls.forEach((el) => el.classList.add("on"));
+		} else {
+			const io = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("on");
+							io.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.14, rootMargin: "0px 0px -6% 0px" }
+			);
+			revealEls.forEach((el) => io.observe(el));
+		}
 	}
 
 	// Active section highlighting
