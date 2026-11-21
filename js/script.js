@@ -2,6 +2,103 @@
 	const $ = (sel, root = document) => root.querySelector(sel);
 	const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+	const translations = {
+		en: {
+			"a11y.skip": "Skip to content",
+			"nav.home": "Home", "nav.about": "About Me", "nav.projects": "My work",
+			"nav.experience": "Experience", "nav.skills": "Skills", "nav.hire": "Hire Me",
+			"hero.portfolio": "My Portfolio", "hero.hello": "Hello, I'm ", "hero.role": "Web Developer",
+			"hero.lead": "I design and build conversion-focused interfaces that look polished, load fast, and feel effortless on every device.",
+			"hero.projects": "View Projects", "hero.downloadCv": "Download CV",
+			"hero.freelance": "Available for freelance", "hero.based": "Based in Cambodia", "hero.fast": "Fast delivery, clean code",
+			"about.label": "About Me", "about.title": "Who is ", "about.question": "?",
+			"about.bio": "I'm an Information Technology graduate who combines thoughtful design with well-built code. I enjoy creating clear, useful digital experiences that look polished, work smoothly, and make sense from the first interaction.",
+			"about.projects": "Projects Completed", "about.fields": "Design & Dev Fields", "about.years": "Years of Study",
+			"about.downloadCv": "Download CV", "about.chips.ui": "UI / UX Design", "about.chips.web": "Web Development",
+			"about.chips.poster": "Poster Design", "about.chips.responsive": "Responsive Layout",
+			"projects.title": "Recently Worked", "projects.poster": "Poster Design", "projects.uxui": "UX/UI Design",
+			"projects.website": "Web Development", "projects.football": "Football Player Poster",
+			"projects.coffee": "Coffee Campaign", "projects.matcha": "Matcha Campaign", "projects.iceLatte": "Ice Latte Campaign",
+			"projects.posterConcept": "Poster Design Concept", "projects.dashboard": "Dashboard UI",
+			"projects.modalSportsTitle": "Sports Poster Design",
+			"projects.modalSportsCaption": "Sports poster built on contrast and depth: layered cutout, soft shadows, bold type. Fan-made, non-commercial.",
+			"projects.modalIceTitle": "Ice Latte Campaign",
+			"projects.modalIceCaption": "Warm coffee gradients, Khmer display typography, soft glow, and clean price tags. Concept work.",
+			"projects.shopping": "Shopping App", "projects.bakery": "Bakery App", "projects.urban": "Urban Trails",
+			"projects.caseMeta": "UX/UI · Figma · Case study", "projects.websiteMeta": "UX/UI · Figma · Website design",
+			"projects.dashboardSummary": "Dashboard concept for tracking activity and tasks at a glance.",
+			"projects.shoppingSummary": "Mobile shopping flow from browsing to checkout.",
+			"projects.bakerySummary": "Ordering app screens for a small bakery.",
+			"projects.urbanSummary": "Travel website UI for discovering destinations and local experiences.",
+			"projects.comingSoon": "Case study coming soon", "projects.viewPrototype": "View prototype",
+			"projects.liveDemo": "Live demo", "projects.seeMore": "See more", "projects.showLess": "Show less",
+			"experience.title": "Experience", "experience.role": "Ticket Seller — Virak Buntham Express",
+			"experience.period": "Jan 2023 – Dec 2025 • Siem Reap, Cambodia",
+			"experience.item1": "Assisted customers with ticket purchases, schedules and travel inquiries.",
+			"experience.item2": "Handled daily cash transactions and maintained accurate payment records.",
+			"experience.item3": "Provided excellent customer service and ensured a positive experience for all clients.",
+			"experience.item4": "Issued tickets and receipts accurately.",
+			"experience.item5": "Communicated professionally with customers and handled routine inquiries.",
+			"experience.tag1": "Customer Service", "experience.tag2": "Cash Handling", "experience.tag3": "Travel Inquiries",
+			"skills.title": "Technical Skills & Tools", "skills.frontend": "Frontend", "skills.styling": "Styling",
+			"skills.interactive": "Interactive", "skills.database": "Database", "skills.versionControl": "Version Control",
+			"skills.uiux": "UI/UX Design", "skills.graphics": "Graphics", "skills.quickAssets": "Quick Assets", "skills.ide": "IDE Editor",
+			"contact.title": "Contact", "contact.build": "Let’s build something",
+			"contact.open": "Open to web development roles, freelance projects, and collaborations.",
+			"contact.quick": "Quick message", "contact.name": "Name", "contact.email": "Email", "contact.message": "Message",
+			"contact.namePlaceholder": "Your name", "contact.emailPlaceholder": "email@example.com",
+			"contact.messagePlaceholder": "Hi! I saw your portfolio and…", "contact.send": "Send",
+			"contact.inbox": "Messages are sent directly to my inbox", "footer.role": "Web Developer", "footer.backTop": "Back to top"
+		},
+		km: {
+			"a11y.skip": "រំលងទៅខ្លឹមសារ",
+			"nav.home": "ទំព័រដើម", "nav.about": "អំពីខ្ញុំ", "nav.projects": "ការងារ",
+			"nav.experience": "បទពិសោធន៍", "nav.skills": "ជំនាញ", "nav.hire": "ជួលខ្ញុំ",
+			"hero.portfolio": "កម្រងស្នាដៃរបស់ខ្ញុំ", "hero.hello": "សួស្តី, ខ្ញុំគឺ ", "hero.role": "អ្នកអភិវឌ្ឍន៍គេហទំព័រ",
+			"hero.lead": "ខ្ញុំរចនា និងបង្កើតចំណុចប្រទាក់ដែលស្អាត ឆាប់រហ័ស និងងាយស្រួលប្រើនៅលើគ្រប់ឧបករណ៍។",
+			"hero.projects": "មើលគម្រោង", "hero.downloadCv": "ទាញយក CV",
+			"hero.freelance": "ទទួលការងារឯករាជ្យ", "hero.based": "នៅកម្ពុជា", "hero.fast": "បញ្ចប់លឿន កូដស្អាត",
+			"about.label": "អំពីខ្ញុំ", "about.title": "តើ ", "about.question": " ជានរណា?",
+			"about.bio": "ខ្ញុំជានិស្សិតបញ្ចប់ការសិក្សាផ្នែកព័ត៌មានវិទ្យា ដែលផ្សំរចនាជាមួយការសរសេរកូដដែលមានគុណភាព។ ខ្ញុំចូលចិត្តបង្កើតបទពិសោធន៍ឌីជីថលដែលស្អាត និងងាយស្រួលប្រើ។",
+			"about.projects": "គម្រោងដែលបានធ្វើ", "about.fields": "ផ្នែករចនា និងអភិវឌ្ឍន៍", "about.years": "ឆ្នាំសិក្សា",
+			"about.downloadCv": "ទាញយក CV", "about.chips.ui": "រចនា UI / UX", "about.chips.web": "អភិវឌ្ឍន៍វែបសាយ",
+			"about.chips.poster": "រចនាប៉ុស្ត័រ", "about.chips.responsive": "ប្លង់មានលទ្ធភាពឆ្លើយតប",
+			"projects.title": "ការងារថ្មីៗ", "projects.poster": "រចនាប៉ុស្ត័រ", "projects.uxui": "រចនា UX/UI",
+			"projects.website": "អភិវឌ្ឍន៍វែបសាយ", "projects.football": "ប៉ុស្ត័រអត្តពលិកបាល់ទាត់",
+			"projects.coffee": "យុទ្ធនាការកាហ្វេ", "projects.matcha": "យុទ្ធនាការម៉ាចា", "projects.iceLatte": "យុទ្ធនាការកូឡាតេទឹកកក",
+			"projects.posterConcept": "គំនិតប៉ុស្ត័រ", "projects.dashboard": "ផ្ទាំងគ្រប់គ្រង",
+			"projects.modalSportsTitle": " Poster កីឡា",
+			"projects.modalSportsCaption": "Poster កីឡាដែលបង្កើតដោយការប្រៀបធៀប និងជម្រៅ៖ កាត់ស្រទាប់ ស្រមោលស្រាល និងអក្សរចម្បង។ ស្នាដៃគំនិតមិនមែនសម្រាប់ពាណិជ្ជកម្ម។",
+			"projects.modalIceTitle": "Ice Latte Campaign",
+			"projects.modalIceCaption": "ពណ៌កាហ្វេស្រទាក់ៗ អក្សរខ្មែរសំរាប់បង្ហាញ ពន្លឺស្រាល និងស្លាកតម្លៃស្អាត។ ស្នាដៃគំនិត។",
+			"projects.shopping": "កម្មវិធីទិញទំនិញ", "projects.bakery": "កម្មវិធីហាងនំបុ័ង", "projects.urban": "Urban Trails",
+			"projects.caseMeta": "UX/UI · Figma · ករណីសិក្សា", "projects.websiteMeta": "UX/UI · Figma · រចនាវែបសាយ",
+			"projects.dashboardSummary": "គំនិតផ្ទាំងគ្រប់គ្រងសម្រាប់តាមដានសកម្មភាព និងភារកិច្ចបានយ៉ាងស្រួល។",
+			"projects.shoppingSummary": "ដំណើរការទិញទំនិញតាមទូរសព្ទពីការរុករករហូតដល់ការទូទាត់។",
+			"projects.bakerySummary": "អេក្រង់កម្មវិធីសម្រាប់ហាងនំបុ័ងតូចមួយ។",
+			"projects.urbanSummary": "ចំណុចប្រទាក់វែបសាយធ្វើដំណើរសម្រាប់ស្វែងរកទិសដៅ និងបទពិសោធន៍ក្នុងតំបន់។",
+			"projects.comingSoon": "ករណីសិក្សានឹងមកដល់ឆាប់ៗ", "projects.viewPrototype": "មើលគំរូ",
+			"projects.liveDemo": "មើលគម្រោង", "projects.seeMore": "មើលបន្ថែម", "projects.showLess": "បង្ហាញតិច",
+			"experience.title": "បទពិសោធន៍", "experience.role": "អ្នកលក់សំបុត្រ — Virak Buntham Express",
+			"experience.period": "មករា 2023 – ខែធ្នូ 2025 • សៀមរាប កម្ពុជា",
+			"experience.item1": "ជួយអតិថិជនក្នុងការទិញសំបុត្រ ពិនិត្យពេលវេលា និងព័ត៌មានធ្វើដំណើរ។",
+			"experience.item2": "គ្រប់គ្រងប្រតិបត្តិការសាច់ប្រាក់ប្រចាំថ្ងៃ និងរក្សាទិនានុប្បវត្តិទូទាត់បានត្រឹមត្រូវ។",
+			"experience.item3": "ផ្តល់សេវាអតិថិជនល្អ និងធានាបទពិសោធន៍វិជ្ជមានសម្រាប់អតិថិជនទាំងអស់។",
+			"experience.item4": "ចេញសំបុត្រ និងបង្កាន់ដៃបានត្រឹមត្រូវ។",
+			"experience.item5": "ទំនាក់ទំនងជាមួយអតិថិជនដោយវិជ្ជមាន និងចម្លើយសំណួរប្រចាំថ្ងៃ។",
+			"experience.tag1": "សេវាអតិថិជន", "experience.tag2": "គ្រប់គ្រងសាច់ប្រាក់", "experience.tag3": "ព័ត៌មានធ្វើដំណើរ",
+			"skills.title": "ជំនាញបច្ចេកទេស និងឧបករណ៍", "skills.frontend": "ផ្នែកមុខ", "skills.styling": "រចនាបែប",
+			"skills.interactive": "អន្តរកម្ម", "skills.database": "មូលដ្ឋានទិន្នន័យ", "skills.versionControl": "គ្រប់គ្រងកំណែ",
+			"skills.uiux": "រចនា UI/UX", "skills.graphics": "ក្រាហ្វិក", "skills.quickAssets": "សន្ដិសម្រស់រហ័ស", "skills.ide": "កម្មវិធីកែសម្រួល",
+			"contact.title": "ទំនាក់ទំនង", "contact.build": "តោះបង្កើតអ្វីមួយ",
+			"contact.open": "ទទួលការងារអភិវឌ្ឍន៍វែបសាយ គម្រោងឯករាជ្យ និងការសហការបាន។",
+			"contact.quick": "ផ្ញើសាររហ័ស", "contact.name": "ឈ្មោះ", "contact.email": "អ៊ីមែល", "contact.message": "សារ",
+			"contact.namePlaceholder": "ឈ្មោះរបស់អ្នក", "contact.emailPlaceholder": "email@example.com",
+			"contact.messagePlaceholder": "សួស្តី! ខ្ញុំបានមើលផលប្រមុខជំនាញរបស់អ្នក…", "contact.send": "ផ្ញើ",
+			"contact.inbox": "សារត្រូវបានផ្ញើដោយផ្ទាល់ទៅប្រអប់សំបុត្ររបស់ខ្ញុំ", "footer.role": "អ្នកអភិវឌ្ឍន៍វែបសាយ", "footer.backTop": "ត្រឡប់ទៅលើ"
+		}
+	};
+
 	const navBtn = $("#navBtn");
 	const menu = $("#menu");
 	const toastEl = $("#toast");
@@ -16,8 +113,76 @@
 	const lightboxTitle = $("#lightboxTitle");
 	const lightboxCaption = $("#lightboxCaption");
 	const lightboxClose = $(".project-lightbox-close", projectLightbox);
+	const themeToggle = $("#themeToggle");
+	const languageOptions = $$(".language-option");
 
 	const menuLinks = $$(".a");
+
+	const getTranslation = (language, key) =>
+		translations[language]?.[key] ?? translations.en[key] ?? key;
+
+	const applyLanguage = (language) => {
+		const selectedLanguage = language === "km" ? "km" : "en";
+		document.documentElement.lang = selectedLanguage;
+		document.documentElement.classList.toggle("lang-km", selectedLanguage === "km");
+		localStorage.setItem("portfolio-language", selectedLanguage);
+
+		$$("[data-i18n]").forEach((element) => {
+			const key = element.dataset.i18n;
+			const translated = getTranslation(selectedLanguage, key);
+			if (translated) {
+				element.textContent = translated;
+				element.dataset.text = translated;
+			}
+		});
+
+		$$("[data-i18n-placeholder]").forEach((element) => {
+			element.placeholder = getTranslation(selectedLanguage, element.dataset.i18nPlaceholder);
+		});
+
+		$$("[data-i18n-aria]").forEach((element) => {
+			element.setAttribute("aria-label", getTranslation(selectedLanguage, element.dataset.i18nAria));
+		});
+
+		languageOptions.forEach((option) => {
+			const isActive = option.dataset.language === selectedLanguage;
+			option.classList.toggle("is-active", isActive);
+			option.setAttribute("aria-pressed", String(isActive));
+		});
+		document.dispatchEvent(new CustomEvent("languagechange", { detail: { language: selectedLanguage } }));
+
+	};
+
+	const applyTheme = (theme) => {
+		const selectedTheme = theme === "light" ? "light" : "dark";
+		document.documentElement.dataset.theme = selectedTheme;
+		document.querySelector('meta[name="theme-color"]')?.setAttribute(
+			"content",
+			selectedTheme === "dark" ? "#012c4e" : "#faf9f6"
+		);
+		document.documentElement.style.colorScheme = selectedTheme;
+		localStorage.setItem("portfolio-theme", selectedTheme);
+
+		if (themeToggle) {
+			const nextTheme = selectedTheme === "dark" ? "light" : "dark";
+			themeToggle.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+			themeToggle.title = `Switch to ${nextTheme} mode`;
+		}
+	};
+
+	const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+	const savedLanguage = localStorage.getItem("portfolio-language") || "en";
+	applyTheme(savedTheme);
+	applyLanguage(savedLanguage);
+
+	themeToggle?.addEventListener("click", () => {
+		const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+		applyTheme(nextTheme);
+	});
+
+	languageOptions.forEach((option) => {
+		option.addEventListener("click", () => applyLanguage(option.dataset.language));
+	});
 
 	// Project categories
 	if (projectGrid && projectFilters.length && seeMoreProjects) {
@@ -37,9 +202,9 @@
 				});
 			seeMoreProjects.hidden = !matchingCards.some((card) => card.classList.contains("project-extra"));
 			seeMoreProjects.setAttribute("aria-expanded", String(expanded));
-			seeMoreProjects.innerHTML = expanded
-				? 'Show less <span aria-hidden="true">↑</span>'
-				: 'See More  <span aria-hidden="true">↓</span>';
+			const language = document.documentElement.lang === "km" ? "km" : "en";
+			const label = getTranslation(language, expanded ? "projects.showLess" : "projects.seeMore");
+			seeMoreProjects.innerHTML = `${label} <span aria-hidden="true">${expanded ? "↑" : "↓"}</span>`;
 		};
 
 		projectFilters.forEach((filterButton) => {
@@ -61,6 +226,7 @@
 		});
 
 		updateProjects();
+		document.addEventListener("languagechange", updateProjects);
 	}
 
 	if (projectGrid && projectLightbox && lightboxImage && lightboxTitle) {
@@ -86,10 +252,17 @@
 			lastFocusedCard = card;
 			lightboxImage.src = image.currentSrc || image.src;
 			lightboxImage.alt = image.alt;
-			lightboxTitle.textContent = image.dataset.title || title.textContent.trim();
+			const language = document.documentElement.lang === "km" ? "km" : "en";
+			const modalTitle = image.dataset.i18nTitle
+				? getTranslation(language, image.dataset.i18nTitle)
+				: (image.dataset.title || title.textContent.trim());
+			const modalCaption = image.dataset.i18nCaption
+				? getTranslation(language, image.dataset.i18nCaption)
+				: (image.dataset.caption || "");
+			lightboxTitle.textContent = modalTitle;
 			if (lightboxCaption) {
-				lightboxCaption.textContent = image.dataset.caption || "";
-				lightboxCaption.hidden = !image.dataset.caption;
+				lightboxCaption.textContent = modalCaption;
+				lightboxCaption.hidden = !modalCaption;
 			}
 			projectLightbox.hidden = false;
 			document.body.classList.add("lightbox-open");
@@ -311,42 +484,53 @@
 
 	const animateTitle = () => {
 		if (!titleAccent) return;
-		const text = titleAccent.dataset.text || titleAccent.textContent.trim();
-		titleAccent.dataset.text = text;
+		const text = (titleAccent.dataset.text || titleAccent.textContent).trim();
 		window.clearTimeout(typewriterTimer);
 		if (reduceMotion) {
+			titleAccent.classList.remove("is-typing");
 			titleAccent.textContent = text;
 			return;
 		}
 
 		titleAccent.classList.add("is-typing");
-		titleAccent.innerHTML = `<span class="sr">${text}</span><span aria-hidden="true">${[...text]
-			.map((character, index) => `<span class="kinetic-letter" style="--i:${index}">${character === " " ? "&nbsp;" : character}</span>`)
+		const segments = typeof Intl !== "undefined" && "Segmenter" in Intl
+			? Array.from(new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(text), ({ segment }) => segment)
+			: Array.from(text);
+
+		titleAccent.innerHTML = `<span class="sr">${text}</span><span aria-hidden="true">${segments
+			.map((character, index) => {
+				const characterText = character === " " ? "&nbsp;" : character;
+				return `<span class="kinetic-letter" style="--i:${index}">${characterText}</span>`;
+			})
 			.join("")}</span>`;
 
 		const letters = $$(".title-accent .kinetic-letter");
 		let visibleCount = 0;
-		const typeNextLetter = () => {
+		const showNextLetter = () => {
 			if (visibleCount >= letters.length) {
 				typewriterTimer = window.setTimeout(() => {
 					letters.forEach((letter) => letter.classList.remove("is-visible"));
 					visibleCount = 0;
-					typewriterTimer = window.setTimeout(typeNextLetter, 180);
-				}, 1400);
+					typewriterTimer = window.setTimeout(showNextLetter, 900);
+				}, 1800);
 				return;
 			}
 
 			letters[visibleCount].classList.add("is-visible");
 			visibleCount += 1;
-			typewriterTimer = window.setTimeout(typeNextLetter, 85);
+			typewriterTimer = window.setTimeout(showNextLetter, document.documentElement.lang === "km" ? 115 : 85);
 		};
 
-		typeNextLetter();
+		showNextLetter();
 	};
 
 	animateName();
 	animateTitle();
 	kineticReplay?.addEventListener("click", () => {
+		animateName();
+		animateTitle();
+	});
+	document.addEventListener("languagechange", () => {
 		animateName();
 		animateTitle();
 	});

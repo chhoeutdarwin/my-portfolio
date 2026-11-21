@@ -11,14 +11,14 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-		href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Kantumruy+Pro:wght@400;500;600;700&family=Outfit:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
 		rel="stylesheet"
 		/>
 
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
-		<a class="skip" href="#main">Skip to content</a>
+		<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 		<header class="topbar" id="top">
 			<div class="wrap topbar-inner">
@@ -33,19 +33,27 @@
 							<span class="sr">Menu</span>
 						</button>
 						<ul class="menu" id="menu">
-							<li><a class="a" href="#home">Home</a></li>
-							<li><a class="a" href="#about">About Me</a></li>
+							<li><a class="a" href="#home" data-i18n="nav.home">Home</a></li>
+							<li><a class="a" href="#about" data-i18n="nav.about">About Me</a></li>
 							<!-- <li><a class="a" href="#services">What I Build</a></li> -->
-							 <li><a class="a" href="#projects">My work</a></li>
-							<li><a class="a" href="#experience">Experience</a></li>
+							 <li><a class="a" href="#projects" data-i18n="nav.projects">My work</a></li>
+							<li><a class="a" href="#experience" data-i18n="nav.experience">Experience</a></li>
 							
-							<li><a class="a" href="#skills">Skills</a></li>
+							<li><a class="a" href="#skills" data-i18n="nav.skills">Skills</a></li>
 						<!-- <li><a class="a" href="#contact">Contact</a></li> -->
 						</ul>
 					</nav>
 
 					<div class="topbar-actions">
-						<a class="btn btn-contact" href="#contact">Hire Me</a>
+						<button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme">
+							<span class="theme-icon sun" aria-hidden="true">☀</span>
+							<span class="theme-icon moon" aria-hidden="true">☾</span>
+						</button>
+						<div class="language-switcher" aria-label="Language">
+							<button class="language-option is-active" type="button" data-language="en" aria-pressed="true">EN</button>
+							<button class="language-option" type="button" data-language="km" aria-pressed="false">ខ្មែរ</button>
+						</div>
+						<a class="btn btn-contact" href="#contact" data-i18n="nav.hire">Hire Me</a>
 					</div>
 				</div>
 			</div>
@@ -55,21 +63,21 @@
 			<section class="hero" id="home">
 				<div class="wrap hero-grid">
 					<div class="hero-left">
-						<p class="eyebrow">My Portfolio</p>
-						<h1 class="h1">Hello, I’m <span class="name">Chhoeut Darwin</span></h1>
-						<p class="title"><span class="title-accent">Web Developer</span></p>
+						<p class="eyebrow" data-i18n="hero.portfolio">My Portfolio</p>
+						<h1 class="h1"><span data-i18n="hero.hello">Hello, I’m </span><span class="name">Chhoeut Darwin</span></h1>
+						<p class="title"><span class="title-accent" data-i18n="hero.role">Web Developer</span></p>
 ​						<p class="lead">
-							I design and build conversion-focused interfaces that look polished, load fast, and feel effortless on every device.
+							<span data-i18n="hero.lead">I design and build conversion-focused interfaces that look polished, load fast, and feel effortless on every device.</span>
 						</p>
 						<div class="cta">
-							<a class="btn primary" href="#projects">View Projects</a>
-							<a class="btn outline" href="assets/cv/CV_Portfolio.pdf" download>Download CV</a>
+							<a class="btn primary" href="#projects" data-i18n="hero.projects">View Projects</a>
+							<a class="btn outline" href="assets/cv/CV_Portfolio.pdf" download data-i18n="hero.downloadCv">Download CV</a>
 						</div>
 
 						<div class="hero-meta" aria-label="Quick highlights">
-							<span class="meta-pill">Available for freelance</span>
-							<span class="meta-pill">Based in Cambodia</span>
-							<span class="meta-pill">Fast delivery, clean code</span>
+							<span class="meta-pill" data-i18n="hero.freelance">Available for freelance</span>
+							<span class="meta-pill" data-i18n="hero.based">Based in Cambodia</span>
+							<span class="meta-pill" data-i18n="hero.fast">Fast delivery, clean code</span>
 						</div>
 
 						<div class="social hero-social" aria-label="Social links">
@@ -115,40 +123,40 @@
 								<img src="assets/img/pfp.jpg" alt="Darwin presenting a project" loading="lazy" />
 							</div>
 							<ul class="about-chips" aria-label="Design and development skills">
-								<li class="about-chip about-chip-one">UI / UX Design</li>
-								<li class="about-chip about-chip-two">Web Development</li>
-								<li class="about-chip about-chip-three">Poster Design</li>
+								<li class="about-chip about-chip-one" data-i18n="about.chips.ui">UI / UX Design</li>
+								<li class="about-chip about-chip-two" data-i18n="about.chips.web">Web Development</li>
+								<li class="about-chip about-chip-three" data-i18n="about.chips.poster">Poster Design</li>
 								<li class="about-chip about-chip-four">Figma</li>
-								<li class="about-chip about-chip-five">Responsive Layout</li>
+								<li class="about-chip about-chip-five" data-i18n="about.chips.responsive">Responsive Layout</li>
 								<li class="about-chip about-chip-six">Photoshop</li>
 							</ul>
 						</div>
 
 						<div class="about-content">
-							<p class="about-eyebrow"><span aria-hidden="true"></span>About Me</p>
-							<h2 class="about-title">Who is <em>Chhoeut Darwin</em>?</h2>
+							<p class="about-eyebrow" data-i18n="about.label">About Me</p>
+							<h2 class="about-title"><span data-i18n="about.title">Who is </span><em>Chhoeut Darwin</em><span data-i18n="about.question">?</span></h2>
 							<p class="about-bio">
-								I’m an Information Technology graduate who combines thoughtful design with well-built code. I enjoy creating clear, useful digital experiences that look polished, work smoothly, and make sense from the first interaction.
+								<span data-i18n="about.bio">I’m an Information Technology graduate who combines thoughtful design with well-built code. I enjoy creating clear, useful digital experiences that look polished, work smoothly, and make sense from the first interaction.</span>
 							</p>
 
 							<div class="about-stats" aria-label="Portfolio highlights">
 								<div class="about-stat">
 									<strong>5+</strong>
-									<span>Projects Completed</span>
+									<span data-i18n="about.projects">Projects Completed</span>
 								</div>
 								<div class="about-stat">
 									<strong>2</strong>
-									<span>Design &amp; Dev Fields</span>
+									<span data-i18n="about.fields">Design &amp; Dev Fields</span>
 								</div>
 								<div class="about-stat">
 									<strong>4</strong>
-									<span>Years of Study</span>
+									<span data-i18n="about.years">Years of Study</span>
 								</div>
 							</div>
 
 							<div class="about-actions">
 								<a class="about-cv" href="assets/cv/CV_Portfolio.pdf" download>
-									<span>Download CV</span>
+									<span data-i18n="about.downloadCv">Download CV</span>
 									<span class="about-cv-arrow" aria-hidden="true">↗</span>
 								</a>
 								<span class="about-sign" aria-label="Darwin">Chhoeut Darwin</span>
@@ -161,14 +169,14 @@
 			<section class="section" id="projects">
 				<div class="wrap">
 					<div class="head">
-						<h2 class="h2">Recently Worked</h2>
+						<h2 class="h2" data-i18n="projects.title">Recently Worked</h2>
 						<!-- <h3 class="sub">A selection of my poster, interface, and website work.</p> -->
 					</div>
 					<div class="project-filters" role="group" aria-label="Filter recent work">
 						<!-- <button class="project-filter is-active" type="button" data-filter="all" aria-pressed="true">All Work</button> -->
-						<button class="project-filter is-active" type="button" data-filter="poster" aria-pressed="true">Poster Design</button>
-						<button class="project-filter" type="button" data-filter="uxui" aria-pressed="false">UX/UI Design</button>
-						<button class="project-filter" type="button" data-filter="website" aria-pressed="false">Web Development</button>
+						<button class="project-filter is-active" type="button" data-filter="poster" aria-pressed="true" data-i18n="projects.poster">Poster Design</button>
+						<button class="project-filter" type="button" data-filter="uxui" aria-pressed="false" data-i18n="projects.uxui">UX/UI Design</button>
+						<button class="project-filter" type="button" data-filter="website" aria-pressed="false" data-i18n="projects.website">Web Development</button>
 					</div>
 					<!-- <h5 class="tip"> Tip: Click images to enlarge, or visit GitHub for full details.</h5> -->
 					<div class="grid-3 project-grid">
@@ -185,21 +193,23 @@
                   height="1697"
                   data-title="Sports Poster Design"
                   data-caption="Sports poster built on contrast and depth: layered cutout, soft shadows, bold type. Fan-made, non-commercial."
+                  data-i18n-title="projects.modalSportsTitle"
+                  data-i18n-caption="projects.modalSportsCaption"
                 />
               </figure>
-              <h3 class="h3 card-title">Football Player Poster</h3>
+              <h3 class="h3 card-title" data-i18n="projects.football">Football Player Poster</h3>
             </article>
             <article class="card p" data-category="poster">
               <figure class="thumb two">
                 <img src="assets/img/Poster2.jpg" alt="Coffee campaign poster" loading="lazy" />
               </figure>
-              <h3 class="h3">Coffee Campaign</h3>
+              <h3 class="h3" data-i18n="projects.coffee">Coffee Campaign</h3>
             </article>
             <article class="card p" data-category="poster">
               <figure class="thumb three">
                 <img src="assets/img/Poster3.jpg" alt="Matcha campaign poster" loading="lazy" />
               </figure>
-              <h3 class="h3">Matcha Campaign</h3>
+              <h3 class="h3" data-i18n="projects.matcha">Matcha Campaign</h3>
             </article>
              <article class="card p poster-card" data-category="poster">
   <figure class="thumb one">
@@ -209,9 +219,11 @@
       width="1200"
       height="1697"
       data-title="Ice Latte Campaign"
-data-caption="Warm coffee gradients, Khmer display typography, soft glow, and clean price tags. Concept work."    />
+data-caption="Warm coffee gradients, Khmer display typography, soft glow, and clean price tags. Concept work."
+data-i18n-title="projects.modalIceTitle"
+data-i18n-caption="projects.modalIceCaption" />
   </figure>
-  <h3 class="h3 card-title">Ice Latte Campaign</h3>
+  <h3 class="h3 card-title" data-i18n="projects.iceLatte">Ice Latte Campaign</h3>
 </article>
 			 <!-- // extra projects -->
 
@@ -220,13 +232,13 @@ data-caption="Warm coffee gradients, Khmer display typography, soft glow, and cl
               <figure class="thumb one">
                 <img src="assets/img/Poster1.jpg" alt="Additional poster design concept" loading="lazy" />
               </figure>
-              <h3 class="h3 card-title">Poster Design Concept</h3>
+              <h3 class="h3 card-title" data-i18n="projects.posterConcept">Poster Design Concept</h3>
             </article>
 			  <article class="card p poster-card project-extra project-disabled" data-category="poster" hidden>
               <figure class="thumb one">
                 <img src="assets/img/Poster5.jpg" alt="Additional poster design concept" loading="lazy" />
               </figure>
-              <h3 class="h3 card-title">Poster Design Concept</h3>
+              <h3 class="h3 card-title" data-i18n="projects.posterConcept">Poster Design Concept</h3>
             </article>
 
             <!-- ============ TAB 2: UX/UI = CASE STUDY CARDS ============
@@ -240,38 +252,38 @@ data-caption="Warm coffee gradients, Khmer display typography, soft glow, and cl
               <figure class="thumb one">
                 <img src="assets/img/Dash.jpg" alt="Dashboard UI cover" loading="lazy" />
               </figure>
-              <h3 class="h3">Dashboard UI</h3>
-              <p class="case-meta">UX/UI · Figma · Case study</p>
-              <p class="case-summary">Dashboard concept for tracking activity and tasks at a glance.</p>
-              <div class="project-links"><span class="chip-soon">Case study coming soon</span></div>
+              <h3 class="h3" data-i18n="projects.dashboard">Dashboard UI</h3>
+              <p class="case-meta" data-i18n="projects.caseMeta">UX/UI · Figma · Case study</p>
+              <p class="case-summary" data-i18n="projects.dashboardSummary">Dashboard concept for tracking activity and tasks at a glance.</p>
+              <div class="project-links"><span class="chip-soon" data-i18n="projects.comingSoon">Case study coming soon</span></div>
             </article>
             <article class="card p case project-disabled" data-category="uxui">
               <figure class="thumb one">
                 <img src="assets/img/Mobile.jpg" alt="Shopping app UI cover" loading="lazy" />
               </figure>
-              <h3 class="h3">Shopping App</h3>
-              <p class="case-meta">UX/UI · Figma · Case study</p>
-              <p class="case-summary">Mobile shopping flow from browsing to checkout.</p>
-              <div class="project-links"><span class="chip-soon">Case study coming soon</span></div>
+              <h3 class="h3" data-i18n="projects.shopping">Shopping App</h3>
+              <p class="case-meta" data-i18n="projects.caseMeta">UX/UI · Figma · Case study</p>
+              <p class="case-summary" data-i18n="projects.shoppingSummary">Mobile shopping flow from browsing to checkout.</p>
+              <div class="project-links"><span class="chip-soon" data-i18n="projects.comingSoon">Case study coming soon</span></div>
             </article>
             <article class="card p case project-disabled" data-category="uxui">
               <figure class="thumb one">
                 <img src="assets/img/Cake.jpg" alt="Bakery app UI cover" loading="lazy" />
               </figure>
-              <h3 class="h3">Bakery App</h3>
-              <p class="case-meta">UX/UI · Figma · Case study</p>
-              <p class="case-summary">Ordering app screens for a small bakery.</p>
-              <div class="project-links"><span class="chip-soon">Case study coming soon</span></div>
+              <h3 class="h3" data-i18n="projects.bakery">Bakery App</h3>
+              <p class="case-meta" data-i18n="projects.caseMeta">UX/UI · Figma · Case study</p>
+              <p class="case-summary" data-i18n="projects.bakerySummary">Ordering app screens for a small bakery.</p>
+              <div class="project-links"><span class="chip-soon" data-i18n="projects.comingSoon">Case study coming soon</span></div>
             </article>
             <article class="card p case" data-category="uxui">
               <figure class="thumb one">
-                <img src="assets/img/urban-trails.jpg" alt="Urban Trails travel website UI" loading="lazy" />
+                <img src="assets/img/IceLatte_Poster.jpg" alt="Urban Trails travel website UI" loading="lazy" />
               </figure>
-              <h3 class="h3">Urban Trails</h3>
-              <p class="case-meta">UX/UI · Figma · Website design</p>
-              <p class="case-summary">Travel website UI for discovering destinations and local experiences.</p>
+              <h3 class="h3" data-i18n="projects.urban">Urban Trails</h3>
+              <p class="case-meta" data-i18n="projects.websiteMeta">UX/UI · Figma · Website design</p>
+              <p class="case-summary" data-i18n="projects.urbanSummary">Travel website UI for discovering destinations and local experiences.</p>
               <div class="project-links">
-                <a href="https://www.figma.com/proto/Nn4GtgnmZPujlKxviTHvQR/Tour-Travel-UI?node-id=26-177&amp;p=f&amp;t=oZ8zuhuzFvZUdkLS-0&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=26%3A177" target="_blank" rel="noopener noreferrer">View prototype <span>&nearr;</span></a>
+                <a href="https://www.figma.com/proto/Nn4GtgnmZPujlKxviTHvQR/Tour-Travel-UI?node-id=26-177&amp;p=f&amp;t=oZ8zuhuzFvZUdkLS-0&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=26%3A177" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.viewPrototype">View prototype</span> <span>&nearr;</span></a>
               </div>
             </article>
 
@@ -283,34 +295,34 @@ data-caption="Warm coffee gradients, Khmer display typography, soft glow, and cl
               </figure>
               <h3 class="h3">Hush</h3>
               <div class="project-links">
-                <a href="https://chhoeutdarwin.github.io/Hush/" target="_blank" rel="noopener noreferrer">Live demo <span>&nearr;</span></a>
+                <a href="https://chhoeutdarwin.github.io/Hush/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.liveDemo">Live demo</span> <span>&nearr;</span></a>
                 <a href="https://github.com/chhoeutdarwin/Hush" target="_blank" rel="noopener noreferrer">GitHub <span>&nearr;</span></a>
               </div>
             </article>
             <article class="card p" data-category="website">
               <figure class="thumb one">
-                <img src="assets/img/tracker.png" alt="Attendance Tracker website" loading="lazy" />
+                <img src="assets/img/Tracker.png" alt="Attendance Tracker website" loading="lazy" />
               </figure>
               <h3 class="h3">Attendance Tracker</h3>
               <div class="project-links">
-                <a href="https://chhoeutdarwin.github.io/attendance-tracker/" target="_blank" rel="noopener noreferrer">Live demo <span>&nearr;</span></a>
+                <a href="https://chhoeutdarwin.github.io/attendance-tracker/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.liveDemo">Live demo</span> <span>&nearr;</span></a>
                 <a href="https://github.com/chhoeutdarwin/attendance-tracker" target="_blank" rel="noopener noreferrer">GitHub <span>&nearr;</span></a>
               </div>
             </article>
             <article class="card p" data-category="website">
               <figure class="thumb one">
-                <img src="assets/img/roomie.png" alt="Roomie website" loading="lazy" />
+                <img src="assets/img/Roomie.png" alt="Roomie website" loading="lazy" />
               </figure>
               <h3 class="h3">Roomie</h3>
               <div class="project-links">
-                <a href="https://chhoeutdarwin.github.io/UrRoomie/" target="_blank" rel="noopener noreferrer">Live demo <span>&nearr;</span></a>
+                <a href="https://chhoeutdarwin.github.io/UrRoomie/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.liveDemo">Live demo</span> <span>&nearr;</span></a>
                 <a href="https://github.com/chhoeutdarwin/UrRoomie" target="_blank" rel="noopener noreferrer">GitHub <span>&nearr;</span></a>
               </div>
             </article>
 
           </div>
           <button class="see-more-projects" type="button" aria-expanded="false">
-						See more <span aria-hidden="true">↓</span>
+						<span data-i18n="projects.seeMore">See more</span> <span aria-hidden="true">↓</span>
 					</button>
 				</div>
 			</section>
@@ -318,7 +330,7 @@ data-caption="Warm coffee gradients, Khmer display typography, soft glow, and cl
 			<section class="section" id="experience">
 				<div class="wrap">
 					<div class="head">
-						<h2 class="h2">Experience</h2>
+						<h2 class="h2" data-i18n="experience.title">Experience</h2>
 					</div>
 					<div class="grid-2 experience-grid">
 						<article class="card experience-card">
@@ -334,17 +346,17 @@ data-caption="Warm coffee gradients, Khmer display typography, soft glow, and cl
 							</div>
 						</article> -->
 
-							<h3 class="h3">Ticket Seller — Virak Buntham Express</h3>
-							<p class="muted">Jan 2023 – Dec 2025 • Siem Reap, Cambodia</p>
+							<h3 class="h3" data-i18n="experience.role">Ticket Seller — Virak Buntham Express</h3>
+							<p class="muted" data-i18n="experience.period">Jan 2023 – Dec 2025 • Siem Reap, Cambodia</p>
 							<ul class="muted">
-								<li>Assisted customers with ticket purchases, schedules and travel inquiries.</li>
-								<li>Handled daily cash transactions and maintained accurate payment records.</li>
-								<li>Provided excellent customer service and ensured a positive experience for all clients.</li>
-								<li>Issued tickets and receipts accurately.</li>
-								<li>Communicated professionally with customers and handled routine inquiries.</li>
+								<li data-i18n="experience.item1">Assisted customers with ticket purchases, schedules and travel inquiries.</li>
+								<li data-i18n="experience.item2">Handled daily cash transactions and maintained accurate payment records.</li>
+								<li data-i18n="experience.item3">Provided excellent customer service and ensured a positive experience for all clients.</li>
+								<li data-i18n="experience.item4">Issued tickets and receipts accurately.</li>
+								<li data-i18n="experience.item5">Communicated professionally with customers and handled routine inquiries.</li>
 							</ul>
 							<div class="tags" aria-label="Key work">
-								<span>Customer Service</span><span>Cash Handling</span><span>Travel Inquiries</span>
+								<span data-i18n="experience.tag1">Customer Service</span><span data-i18n="experience.tag2">Cash Handling</span><span data-i18n="experience.tag3">Travel Inquiries</span>
 							</div>
 						</article>
 						<aside class="experience-art" aria-label="Illustration representing my professional experience">
@@ -365,7 +377,7 @@ data-caption="Warm coffee gradients, Khmer display typography, soft glow, and cl
 			<section class="section" id="skills">
     <div class="wrap">
         <div class="head">
-            <h2 class="h2">Technical Skills & Tools</h2>
+            <h2 class="h2" data-i18n="skills.title">Technical Skills & Tools</h2>
         </div>
 
         <div class="skills-grid" aria-label="Technology skills">
@@ -456,13 +468,13 @@ data-caption="Warm coffee gradients, Khmer display typography, soft glow, and cl
 			<section class="section" id="contact">
 				<div class="wrap">
 					<div class="head">
-						<h2 class="h2">Contact</h2>
+						<h2 class="h2" data-i18n="contact.title">Contact</h2>
 					</div>
 
 					<div class="grid-2">
 						<article class="card">
-							<h3 class="h3">Let’s build something</h3>
-							<p class="muted">Open to web development roles, freelance projects, and collaborations.</p>
+							<h3 class="h3" data-i18n="contact.build">Let’s build something</h3>
+							<p class="muted" data-i18n="contact.open">Open to web development roles, freelance projects, and collaborations.</p>
 							<!-- <a class="contact-phone" href="tel:+85512345678">
 								<span class="contact-phone-label">Phone</span>
 								<span>+855 12 345 678</span>
@@ -507,22 +519,22 @@ data-caption="Warm coffee gradients, Khmer display typography, soft glow, and cl
 							method="POST"
 							autocomplete="on"
 						>
-							<h3 class="h3">Quick message</h3>
+							<h3 class="h3" data-i18n="contact.quick">Quick message</h3>
 							<input type="hidden" name="_subject" value="New portfolio contact message" />
 							<label class="f">
-								<span>Name</span>
-								<input name="name" type="text" placeholder="Your name" required />
+								<span data-i18n="contact.name">Name</span>
+								<input name="name" type="text" placeholder="Your name" data-i18n-placeholder="contact.namePlaceholder" required />
 							</label>
 							<label class="f">
-								<span>Email</span>
-								<input name="email" type="email" placeholder="email@example.com" required />
+								<span data-i18n="contact.email">Email</span>
+								<input name="email" type="email" placeholder="email@example.com" data-i18n-placeholder="contact.emailPlaceholder" required />
 							</label>
 							<label class="f">
-								<span>Message</span>
-								<textarea name="message" rows="4" placeholder="Hi! I saw your portfolio and…" required></textarea>
+								<span data-i18n="contact.message">Message</span>
+								<textarea name="message" rows="4" placeholder="Hi! I saw your portfolio and…" data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
 							</label>
-							<button class="btn primary" type="submit">Send</button>
-							<p class="fine">Messages are sent directly to my inbox</p>
+							<button class="btn primary" type="submit" data-i18n="contact.send">Send</button>
+							<p class="fine" data-i18n="contact.inbox">Messages are sent directly to my inbox</p>
 						</form>
 					</div>
 				</div>
@@ -531,8 +543,8 @@ data-caption="Warm coffee gradients, Khmer display typography, soft glow, and cl
 
 		<footer class="footer">
 			<div class="wrap footer-inner">
-				<p class="fine">© <span id="year"></span> Chhoeut Darwin • Web Developer</p>
-				<a class="l" href="#home">Back to top</a>
+				<p class="fine">© <span id="year"></span> Chhoeut Darwin • <span data-i18n="footer.role">Web Developer</span></p>
+				<a class="l" href="#home" data-i18n="footer.backTop">Back to top</a>
 			</div>
 		</footer>
 
