@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#012c4e" />
+<link rel="icon" href="assets/images/profile/pfp.jpg" />
+<title>Chhoeut Darwin - Portfolio</title>
+<meta name="description" content="Web developer portfolio focused on clean UI engineering and fast, responsive sites." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kantumruy+Pro:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/brutal.css" />
+<script>try{if(!localStorage.getItem("pf-theme"))localStorage.setItem("pf-theme","light")}catch(e){}</script>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="glow" id="glow"></div>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#home" aria-label="Home">CD</a>
+  <nav class="links" id="menu" aria-label="Primary">
+    <a href="#home" data-i18n="nav.home">Home</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#projects" data-i18n="nav.projects">My work</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+  <div class="tools">
+    <button class="chip-btn" id="petToggle" type="button" aria-pressed="true" title="Pets on/off">🐾</button>
+    <button class="chip-btn" id="themeToggle" type="button" aria-label="Switch theme"><span class="sun">☀</span><span class="moon">☾</span></button>
+    <div class="lang"><button class="is-active" data-language="en" aria-pressed="true">EN</button><button data-language="km" aria-pressed="false">ខ្មែរ</button></div>
+    <a class="btn gold hire" href="#contact" data-i18n="nav.hire">Hire Me</a>
+    <button class="chip-btn burger" id="navBtn" aria-expanded="false" aria-controls="menu"><span class="sr">Menu</span>☰</button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hello" data-i18n="hero.hello">Hello, I’m</p>
+      <h1 class="name" id="name">Chhoeut Darwin</h1>
+      <p class="role"><span id="role" data-i18n="hero.role">Web Developer</span><i class="caret"></i></p>
+      <p class="lead" data-i18n="hero.lead">I design and build conversion-focused interfaces that look polished, load fast, and feel effortless on every device.</p>
+      <div class="cta">
+        <a class="btn gold" href="#projects" data-i18n="hero.projects">View Projects</a>
+        <a class="btn ghost" href="assets/cv/CV_Portfolio.pdf" download data-i18n="hero.cv">Download CV</a>
+      </div>
+      <ul class="facts">
+        <li class="live" data-i18n="hero.freelance">Available for freelance</li>
+        <li data-i18n="hero.based">Based in Cambodia</li>
+        <li data-i18n="hero.fast">Fast delivery, clean code</li>
+      </ul>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/chhoeut-darwin-17b0383ba/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6a2.5 2.5 0 0 1 2.48-2.5ZM3 21V9h4v12H3Zm7 0V9h3.8v1.7h.1A4.2 4.2 0 0 1 17.7 8.6C21 8.6 22 10.8 22 14.1V21h-4v-6c0-1.4 0-3.1-1.9-3.1S14 13.6 14 15v6h-4Z"/></svg></a>
+        <a href="https://github.com/chhoeutdarwin" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .8a11.2 11.2 0 0 0-3.5 21.9c.6.1.8-.2.8-.6v-2.2c-3.4.8-4.1-1.4-4.1-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.8 1.2 1.8 1.2 1 .1 1.7-.5 2.1-.9.1-.7.4-1.1.7-1.4-2.7-.3-5.6-1.3-5.6-6A4.8 4.8 0 0 1 5.1 5c-.1-.3-.6-1.6.1-3.3 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.7 1.7.2 3 .1 3.3a4.8 4.8 0 0 1 1.3 3.3c0 4.7-2.9 5.7-5.6 6 .4.3.8 1 .8 2v3c0 .4.2.7.8.6A11.2 11.2 0 0 0 12 .8Z"/></svg></a>
+        <a href="https://t.me/Darwin_Chhoeut" target="_blank" rel="noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.8 4.6 18.6 19.7c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.3l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 3c.9-.3 1.7.2 1.4 1.6Z"/></svg></a>
+      </div>
+    </div>
+    <div class="photo" id="photo">
+      <div class="blob"><img src="assets/images/profile/pfp.jpg" alt="Portrait of Chhoeut Darwin" width="420" height="420" /></div>
+      <span class="float f1">Figma</span><span class="float f2">HTML · CSS · JS</span><span class="float f3">UI / UX</span>
+      <span class="stamp" data-i18n="hero.freelance">Available for freelance</span><span class="butterfly" id="butterfly" aria-hidden="true">🦋</span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track"><span>UI / UX ✺ Web Development ✺ Poster Design ✺ Figma ✺ HTML ✺ CSS ✺ JavaScript ✺ Photoshop ✺ </span><span>UI / UX ✺ Web Development ✺ Poster Design ✺ Figma ✺ HTML ✺ CSS ✺ JavaScript ✺ Photoshop ✺ </span><span>UI / UX ✺ Web Development ✺ Poster Design ✺ Figma ✺ HTML ✺ CSS ✺ JavaScript ✺ Photoshop ✺ </span><span>UI / UX ✺ Web Development ✺ Poster Design ✺ Figma ✺ HTML ✺ CSS ✺ JavaScript ✺ Photoshop ✺ </span></div></div>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <h2 class="h2" data-i18n="nav.about">About</h2>
+    <div class="bento">
+      <article class="tile bio">
+        <p class="big"><span data-i18n="about.t1">Fast learner.</span> <span class="gold-t" data-i18n="about.t2">Curious mind.</span></p>
+        <p class="muted" data-i18n="about.bio">I’m an Information Technology graduate who combines thoughtful design with well-built code. I enjoy creating clear, useful digital experiences that look polished, work smoothly, and make sense from the first interaction.</p>
+        <div class="tags"><span>UI / UX</span><span>Web Dev</span><span>Poster Design</span><span>Figma</span><span>Photoshop</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>MySQL</span><span>Git</span><span>Canva</span><span>VS Code</span></div>
+      </article>
+      <article class="tile stat"><b data-count="8">8</b><span data-i18n="about.projects">Projects Completed</span></article>
+      <article class="tile stat"><b data-count="3">3</b><span data-i18n="about.fields">Design & Dev Fields</span></article>
+      <article class="tile stat"><b data-count="4">4</b><span data-i18n="about.years">Years of Study</span></article>
+      <article class="tile edu">
+        <h3 class="h3" data-i18n="edu.title">Education</h3>
+        <ol class="timeline">
+          <li><time>2022 – 2026</time><strong data-i18n="edu.d1">Bachelor of Science in Information Technology</strong><em>Build Bright University – Siem Reap</em><p class="muted" data-i18n="edu.n1">Graduated with recognizing academic excellence. GPA: 3.32/4.00</p></li>
+          <li><time>2021 – 2022</time><strong data-i18n="edu.d2">High School Diploma</strong><em>Angkor High School</em><p class="muted" data-i18n="edu.n2">Finished Grade 12</p></li>
+        </ol>
+      </article>
+      <article class="tile cert">
+        <h3 class="h3" data-i18n="cert.title">Certifications</h3>
+        <ul>
+          <li><span>🎓</span><div><strong data-i18n="edu.d1">Bachelor of Science in Information Technology</strong><em>Build Bright University</em></div><time>2026</time></li>
+          <li><span>🏅</span><div><strong>Microsoft Office (Word, Excel, PowerPoint)</strong><em>SITS School</em></div><time>2023</time></li>
+        </ul>
+        <a class="btn gold" href="assets/cv/CV_Portfolio.pdf" download data-i18n="hero.cv">Download CV</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="wrap">
+    <h2 class="h2" data-i18n="projects.title">Recently Worked</h2>
+    <div class="filters" role="group" aria-label="Filter work">
+      <button class="is-active" data-filter="poster" aria-pressed="true" data-i18n="projects.poster">Poster Design</button>
+      <button data-filter="uxui" aria-pressed="false" data-i18n="projects.uxui">UX/UI Design</button>
+      <button data-filter="website" aria-pressed="false" data-i18n="projects.website">Web Development</button>
+    </div>
+    <div class="pgrid" id="pgrid">
+      <article class="pcard" data-category="poster"><figure><img src="assets/images/posters/haaland-poster.jpg" alt="Football player poster, blue gradient, vertical typography" loading="lazy" data-title="Sports Poster Design" data-caption="Sports poster built on contrast and depth: layered cutout, soft shadows, bold type. Fan-made, non-commercial." /></figure><h3 data-i18n="projects.football">Football Player Poster</h3></article>
+      <article class="pcard" data-category="poster"><figure><img src="assets/images/posters/poster-2.jpg" alt="Coffee campaign poster" loading="lazy" /></figure><h3 data-i18n="projects.coffee">Coffee Campaign</h3></article>
+      <article class="pcard" data-category="poster"><figure><img src="assets/images/posters/poster-3.jpg" alt="Matcha campaign poster" loading="lazy" /></figure><h3 data-i18n="projects.matcha">Matcha Campaign</h3></article>
+      <article class="pcard" data-category="poster"><figure><img src="assets/images/posters/ice-latte-poster.jpg" alt="Moka Ice Latte poster with Khmer typography" loading="lazy" data-title="Ice Latte Campaign" data-caption="Warm coffee gradients, Khmer display typography, soft glow, and clean price tags. Concept work." /></figure><h3 data-i18n="projects.iceLatte">Ice Latte Campaign</h3></article>
+
+      <article class="pcard" data-category="uxui" hidden><figure><img src="assets/images/posters/ice-latte-poster.jpg" alt="Urban Trails travel website UI" loading="lazy" /></figure><h3 data-i18n="projects.urban">Urban Trails</h3><p class="meta" data-i18n="projects.meta">UX/UI · Figma · Website design</p><p class="muted" data-i18n="projects.urbanSummary">Travel website UI for discovering destinations and local experiences.</p>
+        <div class="plinks"><a href="https://www.figma.com/proto/Nn4GtgnmZPujlKxviTHvQR/Tour-Travel-UI?node-id=26-177&amp;p=f&amp;t=oZ8zuhuzFvZUdkLS-0&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=26%3A177" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.proto">View prototype</span> ↗</a></div></article>
+
+      <article class="pcard" data-category="website" hidden><figure><img src="assets/images/projects/hush.png" alt="Hush website" loading="lazy" /></figure><h3>Hush</h3><div class="plinks"><a href="https://chhoeutdarwin.github.io/Hush/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.demo">Live demo</span> ↗</a><a href="https://github.com/chhoeutdarwin/Hush" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></article>
+      <article class="pcard" data-category="website" hidden><figure><img src="assets/images/projects/tracker.png" alt="Attendance Tracker website" loading="lazy" /></figure><h3>Attendance Tracker</h3><div class="plinks"><a href="https://chhoeutdarwin.github.io/attendance-tracker/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.demo">Live demo</span> ↗</a><a href="https://github.com/chhoeutdarwin/attendance-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></article>
+      <article class="pcard" data-category="website" hidden><figure><img src="assets/images/projects/roomie.png" alt="Roomie website" loading="lazy" /></figure><h3>Roomie</h3><div class="plinks"><a href="https://chhoeutdarwin.github.io/UrRoomie/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.demo">Live demo</span> ↗</a><a href="https://github.com/chhoeutdarwin/UrRoomie" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <h2 class="h2" data-i18n="nav.contact">Contact</h2>
+    <div class="cgrid">
+      <article class="tile">
+        <h3 class="h3" data-i18n="contact.build">Let’s build something</h3>
+        <p class="muted" data-i18n="contact.open">Open to web development roles, freelance projects, and collaborations.</p>
+        <div class="cta">
+          <a class="btn ghost" href="https://www.linkedin.com/in/chhoeut-darwin-17b0383ba/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/chhoeutdarwin" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn ghost" href="https://t.me/Darwin_Chhoeut" target="_blank" rel="noopener noreferrer">@Darwin_Chhoeut</a>
+          <a class="btn ghost" href="tel:+855966356765">096 6356 765</a>
+          <button class="btn gold" type="button" id="copyPhone" data-i18n="contact.copy">Copy phone number</button>
+        </div>
+      </article>
+      <form class="tile form" id="contactForm" action="https://formspree.io/f/mjyggvqn" method="POST">
+        <h3 class="h3" data-i18n="contact.quick">Quick message</h3>
+        <input type="hidden" name="_subject" value="New portfolio contact message" />
+        <label><span data-i18n="contact.name">Name</span><input name="name" type="text" data-i18n-placeholder="contact.namePh" placeholder="Your name" required /></label>
+        <label><span data-i18n="contact.email">Email</span><input name="email" type="email" placeholder="email@example.com" required /></label>
+        <label><span data-i18n="contact.message">Message</span><textarea name="message" rows="4" data-i18n-placeholder="contact.msgPh" placeholder="Hi! I saw your portfolio and…" required></textarea></label>
+        <button class="btn gold" type="submit" data-i18n="contact.send">Send</button>
+        <p class="fine" data-i18n="contact.inbox">Messages are sent directly to my inbox</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer"><div class="wrap foot"><p class="fine">© <span id="year"></span> Chhoeut Darwin • <span data-i18n="footer.role">Web Developer</span></p><a class="btn ghost" href="#home" data-i18n="footer.top">Back to top</a></div></footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="lb" id="lb" hidden><div class="lb-bg" data-close></div><div class="lb-box" role="dialog" aria-modal="true"><button class="lb-x" data-close aria-label="Close">×</button><img id="lbImg" src="" alt="" /><h3 id="lbTitle"></h3><p id="lbCap" class="muted"></p></div></div>
+<script src="js/script.js" defer></script>
+</body>
+</html>

@@ -1,543 +1,157 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="color-scheme" content="dark" />
-		<meta name="theme-color" content="#0e1625" />
-		<link rel="icon" href="assets/images/profile/pfp.jpg" />
-		<title>Chhoeut Darwin - Portfolio</title>
-		<meta name="description" content="Web developer portfolio focused on clean UI engineering and fast, responsive sites." />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-		href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Kantumruy+Pro:wght@400;500;600;700&family=Outfit:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
-		rel="stylesheet"
-		/>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#012c4e" />
+<link rel="icon" href="assets/images/profile/pfp.jpg" />
+<title>Chhoeut Darwin - Portfolio</title>
+<meta name="description" content="Web developer portfolio focused on clean UI engineering and fast, responsive sites." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kantumruy+Pro:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="glow" id="glow"></div>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
-		<link rel="stylesheet" href="css/styles.css" />
-	</head>
-	<body>
-		<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
+<header class="nav" id="nav">
+  <a class="logo" href="#home" aria-label="Home">CD</a>
+  <nav class="links" id="menu" aria-label="Primary">
+    <a href="#home" data-i18n="nav.home">Home</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#projects" data-i18n="nav.projects">My work</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+  <div class="tools">
+    <button class="chip-btn" id="petToggle" type="button" aria-pressed="true" title="Pets on/off">🐾</button>
+    <button class="chip-btn" id="themeToggle" type="button" aria-label="Switch theme"><span class="sun">☀</span><span class="moon">☾</span></button>
+    <div class="lang"><button class="is-active" data-language="en" aria-pressed="true">EN</button><button data-language="km" aria-pressed="false">ខ្មែរ</button></div>
+    <a class="btn gold hire" href="#contact" data-i18n="nav.hire">Hire Me</a>
+    <button class="chip-btn burger" id="navBtn" aria-expanded="false" aria-controls="menu"><span class="sr">Menu</span>☰</button>
+  </div>
+</header>
 
-		<header class="topbar" id="top">
-			<div class="wrap topbar-inner">
-				<div class="pill">
-					<a class="logo" href="#home" aria-label="home">
-						<span class="logo-mark" aria-hidden="true">CD</span>
-					</a>
-
-					<nav class="nav" aria-label="Primary">
-						<button class="nav-btn" id="navBtn" type="button" aria-expanded="false" aria-controls="menu">
-							<span class="nav-icon" aria-hidden="true"></span>
-							<span class="sr">Menu</span>
-						</button>
-						<ul class="menu" id="menu">
-							<li><a class="a" href="#home" data-i18n="nav.home">Home</a></li>
-							<li><a class="a" href="#about" data-i18n="nav.about">About Me</a></li>
-							<!-- <li><a class="a" href="#services">What I Build</a></li> -->
-							 <li><a class="a" href="#projects" data-i18n="nav.projects">My work</a></li>
-							<li><a class="a" href="#experience" data-i18n="nav.experience">Experience</a></li>
-							
-							<!-- <li><a class="a" href="#skills" data-i18n="nav.skills">Skills</a></li> -->
-						<li><a class="a" href="#contact" data-i18n="nav.contact">Contact</a></li>
-						</ul>
-					</nav>
-
-					<div class="topbar-actions">
-						<button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme">
-							<span class="theme-icon sun" aria-hidden="true">☀</span>
-							<span class="theme-icon moon" aria-hidden="true">☾</span>
-						</button>
-						<div class="language-switcher" aria-label="Language">
-							<button class="language-option is-active" type="button" data-language="en" aria-pressed="true">EN</button>
-							<button class="language-option" type="button" data-language="km" aria-pressed="false">ខ្មែរ</button>
-						</div>
-						<a class="btn btn-contact" href="#contact" data-i18n="nav.hire">Hire Me</a>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<main id="main">
-			<section class="hero" id="home">
-				<div class="wrap hero-grid">
-					<div class="hero-left">
-						<p class="eyebrow" data-i18n="hero.portfolio">My Portfolio</p>
-						<h1 class="h1"><span data-i18n="hero.hello">Hello, I’m </span><span class="name">Chhoeut Darwin</span></h1>
-						<p class="title"><span class="title-accent" data-i18n="hero.role">Web Developer</span></p>
-​						<p class="lead">
-							<span data-i18n="hero.lead">I design and build conversion-focused interfaces that look polished, load fast, and feel effortless on every device.</span>
-						</p>
-						<div class="cta">
-							<a class="btn primary" href="#projects" data-i18n="hero.projects">View Projects</a>
-							<a class="btn outline" href="assets/cv/CV_Portfolio.pdf" download data-i18n="hero.downloadCv">Download CV</a>
-						</div>
-
-						<div class="hero-meta" aria-label="Quick highlights">
-							<span class="meta-pill" data-i18n="hero.freelance">Available for freelance</span>
-							<span class="meta-pill" data-i18n="hero.based">Based in Cambodia</span>
-							<span class="meta-pill" data-i18n="hero.fast">Fast delivery, clean code</span>
-						</div>
-
-						<div class="social hero-social" aria-label="Social links">
-							<a class="icon" href="https://www.linkedin.com/in/chhoeut-darwin-17b0383ba/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6a2.5 2.5 0 0 1 2.48-2.5ZM3 21V9h4v12H3Zm7 0V9h3.8v1.7h.1A4.2 4.2 0 0 1 17.7 8.6C21 8.6 22 10.8 22 14.1V21h-4v-6c0-1.4 0-3.1-1.9-3.1S14 13.6 14 15v6h-4Z"/></svg>
-							</a>
-							<!-- <a class="icon" href="https://www.instagram.com/_daawinnnnn?igsh=MTNwcjVnb3UzM2pxMQ%3D%3D&utm_source=qr" target="_blank" rel="noreferrer" aria-label="Instagram">
-								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 4.6A5.4 5.4 0 1 1 6.6 14 5.4 5.4 0 0 1 12 8.6Zm0 2A3.4 3.4 0 1 0 15.4 14 3.4 3.4 0 0 0 12 10.6Zm5.7-2.3a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1Z"/></svg>
-							</a> -->
-							<a class="icon" href="https://github.com/chhoeutdarwin" target="_blank" rel="noreferrer" aria-label="GitHub">
-								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.5 21.9c.6.1.8-.2.8-.6v-2.2c-3.4.8-4.1-1.4-4.1-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.8 1.2 1.8 1.2 1 .1 1.7-.5 2.1-.9.1-.7.4-1.1.7-1.4-2.7-.3-5.6-1.3-5.6-6A4.8 4.8 0 0 1 5.1 5c-.1-.3-.6-1.6.1-3.3 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.7 1.7.2 3 .1 3.3a4.8 4.8 0 0 1 1.3 3.3c0 4.7-2.9 5.7-5.6 6 .4.3.8 1 .8 2v3c0 .4.2.7.8.6A11.2 11.2 0 0 0 12 .8Z"/></svg>
-							</a>
-							<!-- <a class="icon" href="https://web.facebook.com/chhoeut.darwin" target="_blank" rel="noreferrer" aria-label="Facebook">
-								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 8H16V4h-2.5C10.46 4 9 5.79 9 8.3V10H6v4h3v8h4v-8h3l.5-4H13V8.7c0-.5.2-.7.5-.7Z"/></svg>
-							</a> -->
-							<a class="icon" href="https://t.me/Darwin_Chhoeut" target="_blank" rel="noreferrer" aria-label="Telegram">
-								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 4.6 18.6 19.7c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.3l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 3c.9-.3 1.7.2 1.4 1.6Z"/></svg>
-							</a>
-							
-						</div>
-
-					</div>
-
-					<aside class="hero-right" aria-label="Hero artwork">
-						<div class="art">
-							<div class="frame">
-								<div class="avatar"><img src="assets/images/profile/pfp.jpg" alt="Portrait of Chhoeut Darwin" width="260" height="260"></div>
-								<!-- <div class="gadget g1" aria-hidden="true"></div>
-								<div class="gadget g2" aria-hidden="true"></div> -->
-							</div>
-						</div>
-					</aside>
-				</div>
-
-
-			</section>
-
-			<section class="section" id="about">
-				<div class="wrap">
-					<div class="about-grid">
-						<div class="about-visual">
-							<div class="about-circle">
-								<img src="assets/images/profile/pfp.jpg" alt="Darwin presenting a project" loading="lazy" />
-							</div>
-							<ul class="about-chips" aria-label="Design and development skills">
-								<li class="about-chip about-chip-one" data-i18n="about.chips.ui">UI / UX Design</li>
-								<li class="about-chip about-chip-two" data-i18n="about.chips.web">Web Development</li>
-								<li class="about-chip about-chip-three" data-i18n="about.chips.poster">Poster Design</li>
-								<li class="about-chip about-chip-four">Figma</li>
-								<li class="about-chip about-chip-five" data-i18n="about.chips.responsive">AI-Assisted Research</li>
-								<li class="about-chip about-chip-six">Photoshop</li>
-								<li class="about-chip about-chip-seven" data-i18n="about.chips.basicIt">Basic IT Support</li>
-							</ul>
-						</div>
-
-						<div class="about-content">
-							<p class="about-eyebrow" data-i18n="about.label">About Me</p>
-							<h2 class="about-title">
-								<span data-i18n="about.name">Chhoeut Darwin </span> |
-								<br />
-								<em>
-									<span class="about-trait" data-i18n="about.traits.first">Fast learner.</span>
-									<span class="about-trait" data-i18n="about.traits.second">Curious mind.</span>
-									<!-- <span class="about-trait" data-i18n="about.traits.third">Finisher.</span> -->
-								</em>
-							</h2>
-							<p class="about-bio">
-								<span data-i18n="about.bio">I’m an Information Technology graduate who combines thoughtful design with well-built code. I enjoy creating clear, useful digital experiences that look polished, work smoothly, and make sense from the first interaction.</span>
-							</p>
-
-							<div class="about-stats" aria-label="Portfolio highlights">
-								<div class="about-stat">
-									<strong>7+</strong>
-									<span data-i18n="about.projects">Projects Completed</span>
-								</div>
-								<div class="about-stat">
-									<strong>2</strong>
-									<span data-i18n="about.fields">Design &amp; Dev Fields</span>
-								</div>
-								<div class="about-stat">
-									<strong>4</strong>
-									<span data-i18n="about.years">Years of Study</span>
-								</div>
-							</div>
-
-							<div class="about-actions">
-								<a class="about-cv" href="assets/cv/CV_Portfolio.pdf" download>
-									<span data-i18n="about.downloadCv">Download CV</span>
-									<span class="about-cv-arrow" aria-hidden="true">↗</span>
-								</a>
-								<span class="about-sign" aria-label="Darwin">Chhoeut Darwin</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="section" id="projects">
-				<div class="wrap">
-					<div class="head">
-						<h2 class="h2" data-i18n="projects.title">Recently Worked</h2>
-						<!-- <h3 class="sub">A selection of my poster, interface, and website work.</p> -->
-					</div>
-					<div class="project-filters" role="group" aria-label="Filter recent work">
-						<!-- <button class="project-filter is-active" type="button" data-filter="all" aria-pressed="true">All Work</button> -->
-						<button class="project-filter is-active" type="button" data-filter="poster" aria-pressed="true" data-i18n="projects.poster">Poster Design</button>
-						<button class="project-filter" type="button" data-filter="uxui" aria-pressed="false" data-i18n="projects.uxui">UX/UI Design</button>
-						<button class="project-filter" type="button" data-filter="website" aria-pressed="false" data-i18n="projects.website">Web Development</button>
-					</div>
-					<!-- <h5 class="tip"> Tip: Click images to enlarge, or visit GitHub for full details.</h5> -->
-					<div class="grid-3 project-grid">
-
-            <!-- ============ TAB 1: POSTER DESIGN ============
-                 EDIT: replace the image (assets/images/posters/) and the title. Keep class="card p" data-category="poster". -->
-            <article class="card p poster-card" data-category="poster">
-              <figure class="thumb one">
-                <img
-                  src="assets/images/posters/haaland-poster.jpg"
-                  alt="Football player poster design featuring Haaland in a Manchester City kit, blue gradient background with large vertical typography"
-                  loading="lazy"
-                  width="1200"
-                  height="1697"
-                  data-title="Sports Poster Design"
-                  data-caption="Sports poster built on contrast and depth: layered cutout, soft shadows, bold type. Fan-made, non-commercial."
-                  data-i18n-title="projects.modalSportsTitle"
-                  data-i18n-caption="projects.modalSportsCaption"
-                />
-              </figure>
-              <h3 class="h3 card-title" data-i18n="projects.football">Football Player Poster</h3>
-            </article>
-            <article class="card p" data-category="poster">
-              <figure class="thumb two">
-                <img src="assets/images/posters/poster-2.jpg" alt="Coffee campaign poster" loading="lazy" />
-              </figure>
-              <h3 class="h3" data-i18n="projects.coffee">Coffee Campaign</h3>
-            </article>
-            <article class="card p" data-category="poster">
-              <figure class="thumb three">
-                <img src="assets/images/posters/poster-3.jpg" alt="Matcha campaign poster" loading="lazy" />
-              </figure>
-              <h3 class="h3" data-i18n="projects.matcha">Matcha Campaign</h3>
-            </article>
-             <article class="card p poster-card" data-category="poster">
-  <figure class="thumb one">
-    <img
-      src="assets/images/posters/ice-latte-poster.jpg"
-      alt="Moka Ice Latte promotional poster with two coffee cups, brown gradient background, and Khmer typography"
-      width="1200"
-      height="1697"
-      data-title="Ice Latte Campaign"
-data-caption="Warm coffee gradients, Khmer display typography, soft glow, and clean price tags. Concept work."
-data-i18n-title="projects.modalIceTitle"
-data-i18n-caption="projects.modalIceCaption" />
-  </figure>
-  <h3 class="h3 card-title" data-i18n="projects.iceLatte">Ice Latte Campaign</h3>
-</article>
-			 <!-- // extra projects -->
-
-			 
-            <article class="card p poster-card project-extra project-disabled" data-category="poster" hidden>
-              <figure class="thumb one">
-                <img src="assets/images/posters/poster-1.jpg" alt="Additional poster design concept" loading="lazy" />
-              </figure>
-              <h3 class="h3 card-title" data-i18n="projects.posterConcept">Poster Design Concept</h3>
-            </article>
-            <!-- ============ TAB 2: UX/UI = CASE STUDY CARDS ============
-                 Each card = cover image + title + meta + 1-line summary + link.
-                 EDIT: cover image, title, case-meta (Role · Tool · Time), case-summary (Problem -> Solution).
-                 When the case study page is ready, replace the "coming soon" chip with:
-                 <a href="case-studies/your-project.html">Read case study <span>&nearr;</span></a>
-                 and add a Figma link:
-                 <a href="PASTE-YOUR-FIGMA-SHARE-LINK" target="_blank" rel="noopener noreferrer">Figma prototype <span>&nearr;</span></a> -->
-            <article class="card p case" data-category="uxui">
-              <figure class="thumb one">
-                <img src="assets/images/posters/ice-latte-poster.jpg" alt="Urban Trails travel website UI" loading="lazy" />
-              </figure>
-              <h3 class="h3" data-i18n="projects.urban">Urban Trails</h3>
-              <p class="case-meta" data-i18n="projects.websiteMeta">UX/UI · Figma · Website design</p>
-              <p class="case-summary" data-i18n="projects.urbanSummary">Travel website UI for discovering destinations and local experiences.</p>
-              <div class="project-links">
-                <a href="https://www.figma.com/proto/Nn4GtgnmZPujlKxviTHvQR/Tour-Travel-UI?node-id=26-177&amp;p=f&amp;t=oZ8zuhuzFvZUdkLS-0&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=26%3A177" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.viewPrototype">View prototype</span> <span>&nearr;</span></a>
-              </div>
-            </article>
-
-            <!-- ============ TAB 3: Web Development ============
-                 EDIT: title, image, Live demo + GitHub links. Add more cards by copying one <article>. -->
-            <article class="card p" data-category="website">
-              <figure class="thumb one">
-                <img src="assets/images/projects/hush.png" alt="Hush website" loading="lazy" />
-              </figure>
-              <h3 class="h3">Hush</h3>
-              <div class="project-links">
-                <a href="https://chhoeutdarwin.github.io/Hush/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.liveDemo">Live demo</span> <span>&nearr;</span></a>
-                <a href="https://github.com/chhoeutdarwin/Hush" target="_blank" rel="noopener noreferrer">GitHub <span>&nearr;</span></a>
-              </div>
-            </article>
-            <article class="card p" data-category="website">
-              <figure class="thumb one">
-                <img src="assets/images/projects/tracker.png" alt="Attendance Tracker website" loading="lazy" />
-              </figure>
-              <h3 class="h3">Attendance Tracker</h3>
-              <div class="project-links">
-                <a href="https://chhoeutdarwin.github.io/attendance-tracker/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.liveDemo">Live demo</span> <span>&nearr;</span></a>
-                <a href="https://github.com/chhoeutdarwin/attendance-tracker" target="_blank" rel="noopener noreferrer">GitHub <span>&nearr;</span></a>
-              </div>
-            </article>
-            <article class="card p" data-category="website">
-              <figure class="thumb one">
-                <img src="assets/images/projects/roomie.png" alt="Roomie website" loading="lazy" />
-              </figure>
-              <h3 class="h3">Roomie</h3>
-              <div class="project-links">
-                <a href="https://chhoeutdarwin.github.io/UrRoomie/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.liveDemo">Live demo</span> <span>&nearr;</span></a>
-                <a href="https://github.com/chhoeutdarwin/UrRoomie" target="_blank" rel="noopener noreferrer">GitHub <span>&nearr;</span></a>
-              </div>
-            </article>
-
-          </div>
-          <button class="see-more-projects" type="button" aria-expanded="false">
-						<span data-i18n="projects.seeMore">See more</span> <span aria-hidden="true">↓</span>
-					</button>
-				</div>
-			</section>
-
-			<section class="section" id="experience">
-				<div class="wrap">
-					<div class="head">
-						<h2 class="h2" data-i18n="experience.title">Experience</h2>
-					</div>
-					<div class="grid-2 experience-grid">
-						<article class="card experience-card">
-						<!-- <article class="card">
-							<h3 class="h3">Frontend Developer — Company Name</h3>
-							<p class="muted">Jan 2024 – Present • City, Country</p>
-							<p class="muted">
-								Built responsive interfaces, optimized Core Web Vitals, and shipped reusable components
-								in a shared UI system.
-							</p>
-							<div class="tags" aria-label="Key work">
-								<span>Component library</span><span>Performance</span><span>Accessibility</span>
-							</div>
-						</article> -->
-
-							<h3 class="h3" data-i18n="experience.role">Ticket Seller — Virak Buntham Express</h3>
-							<p class="muted" data-i18n="experience.period">Jan 2023 – Dec 2025 • Siem Reap, Cambodia</p>
-							<ul class="muted">
-								<li data-i18n="experience.item1">Assisted customers with ticket purchases, schedules and travel inquiries.</li>
-								<li data-i18n="experience.item2">Handled daily cash transactions and maintained accurate payment records.</li>
-								<li data-i18n="experience.item3">Provided excellent customer service and ensured a positive experience for all clients.</li>
-								<li data-i18n="experience.item4">Issued tickets and receipts accurately.</li>
-								<li data-i18n="experience.item5">Communicated professionally with customers and handled routine inquiries.</li>
-							</ul>
-							<div class="tags" aria-label="Key work">
-								<span data-i18n="experience.tag1">Customer Service</span><span data-i18n="experience.tag2">Cash Handling</span><span data-i18n="experience.tag3">Travel Inquiries</span>
-							</div>
-						</article>
-						<aside class="experience-art" aria-label="Illustration representing my professional experience">
-							<div class="experience-art-shape experience-art-shape-one" aria-hidden="true"></div>
-							<div class="experience-art-shape experience-art-shape-two" aria-hidden="true"></div>
-							<figure class="experience-art-frame">
-								<img src="assets/images/miscellaneous/anime.jpg" alt="Illustration of a friendly professional carrying a notebook" loading="lazy" />
-							</figure>
-							<div class="experience-art-caption">
-								<span class="experience-art-dot" aria-hidden="true"></span>
-								<span>Stay curious, keep shipping. </span>
-							</div>
-						</aside>
-					</div>
-				</div>
-			</section>
-
-			<!--
-			<section class="section" id="skills">
-    <div class="wrap">
-        <div class="head">
-            <h2 class="h2" data-i18n="skills.title">Technical Skills & Tools</h2>
-        </div>
-
-        <div class="skills-grid" aria-label="Technology skills">
-            HTML5
-            <div class="skill-card" data-category="frontend">
-                <div class="skill-icon-wrapper">
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" loading="lazy" />
-                </div>
-                <h3 class="skill-name">HTML5</h3>
-                <span class="skill-tag">Frontend</span>
-            </div>
-
-            CSS3
-            <div class="skill-card" data-category="frontend">
-                <div class="skill-icon-wrapper">
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" loading="lazy" />
-                </div>
-                <h3 class="skill-name">CSS3</h3>
-                <span class="skill-tag">Styling</span>
-            </div>
-
-            JavaScript
-            <div class="skill-card" data-category="frontend">
-                <div class="skill-icon-wrapper">
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy" />
-                </div>
-                <h3 class="skill-name">JavaScript</h3>
-                <span class="skill-tag">Interactive</span>
-            </div>
-
-            MySQL
-            <div class="skill-card" data-category="database">
-                <div class="skill-icon-wrapper">
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" loading="lazy" />
-                </div>
-                <h3 class="skill-name">MySQL</h3>
-                <span class="skill-tag">Database</span>
-            </div>
-
-            Git
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon-wrapper">
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" loading="lazy" />
-                </div>
-                <h3 class="skill-name">Git</h3>
-                <span class="skill-tag">Version Control</span>
-            </div>
-
-            Figma
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon-wrapper">
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" loading="lazy" />
-                </div>
-                <h3 class="skill-name">Figma</h3>
-                <span class="skill-tag">UI/UX Design</span>
-            </div>
-
-            Photoshop
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon-wrapper">
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-plain.svg" alt="Photoshop" loading="lazy" />
-                </div>
-                <h3 class="skill-name">Photoshop</h3>
-                <span class="skill-tag">Graphics</span>
-            </div>
-
-            Canva
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon-wrapper">
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva" loading="lazy" />
-                </div>
-                <h3 class="skill-name">Canva</h3>
-                <span class="skill-tag">Quick Assets</span>
-            </div>
-
-            VS Code
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon-wrapper">
-                    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" loading="lazy" />
-                </div>
-                <h3 class="skill-name">VS Code</h3>
-                <span class="skill-tag">IDE Editor</span>
-            </div>
-			
-        </div>
+<main id="main">
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hello" data-i18n="hero.hello">Hello, I’m</p>
+      <h1 class="name" id="name">Chhoeut Darwin</h1>
+      <p class="role"><span id="role" data-i18n="hero.role">Web Developer</span><i class="caret"></i></p>
+      <p class="lead" data-i18n="hero.lead">I design and build conversion-focused interfaces that look polished, load fast, and feel effortless on every device.</p>
+      <div class="cta">
+        <a class="btn gold" href="#projects" data-i18n="hero.projects">View Projects</a>
+        <a class="btn ghost" href="assets/cv/CV_Portfolio.pdf" download data-i18n="hero.cv">Download CV</a>
+      </div>
+      <ul class="facts">
+        <li class="live" data-i18n="hero.freelance">Available for freelance</li>
+        <li data-i18n="hero.based">Based in Cambodia</li>
+        <li data-i18n="hero.fast">Fast delivery, clean code</li>
+      </ul>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/chhoeut-darwin-17b0383ba/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6a2.5 2.5 0 0 1 2.48-2.5ZM3 21V9h4v12H3Zm7 0V9h3.8v1.7h.1A4.2 4.2 0 0 1 17.7 8.6C21 8.6 22 10.8 22 14.1V21h-4v-6c0-1.4 0-3.1-1.9-3.1S14 13.6 14 15v6h-4Z"/></svg></a>
+        <a href="https://github.com/chhoeutdarwin" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .8a11.2 11.2 0 0 0-3.5 21.9c.6.1.8-.2.8-.6v-2.2c-3.4.8-4.1-1.4-4.1-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.8 1.2 1.8 1.2 1 .1 1.7-.5 2.1-.9.1-.7.4-1.1.7-1.4-2.7-.3-5.6-1.3-5.6-6A4.8 4.8 0 0 1 5.1 5c-.1-.3-.6-1.6.1-3.3 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.7 1.7.2 3 .1 3.3a4.8 4.8 0 0 1 1.3 3.3c0 4.7-2.9 5.7-5.6 6 .4.3.8 1 .8 2v3c0 .4.2.7.8.6A11.2 11.2 0 0 0 12 .8Z"/></svg></a>
+        <a href="https://t.me/Darwin_Chhoeut" target="_blank" rel="noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.8 4.6 18.6 19.7c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.3l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 3c.9-.3 1.7.2 1.4 1.6Z"/></svg></a>
+      </div>
     </div>
+    <div class="photo" id="photo">
+      <div class="blob"><img src="assets/images/profile/pfp.jpg" alt="Portrait of Chhoeut Darwin" width="420" height="420" /></div>
+      <span class="float f1">Figma</span><span class="float f2">HTML · CSS · JS</span><span class="float f3">UI / UX</span>
+      <span class="butterfly" id="butterfly" aria-hidden="true">🦋</span>
+    </div>
+  </div>
 </section>
-			-->
-			<section class="section" id="contact">
-				<div class="wrap">
-					<div class="head">
-						<h2 class="h2" data-i18n="contact.title">Contact</h2>
-					</div>
 
-					<div class="grid-2">
-						<article class="card">
-							<h3 class="h3" data-i18n="contact.build">Let’s build something</h3>
-							<p class="muted" data-i18n="contact.open">Open to web development roles, freelance projects, and collaborations.</p>
-							<!-- <a class="contact-phone" href="tel:+85512345678">
-								<span class="contact-phone-label">Phone</span>
-								<span>+855 12 345 678</span>
-							</a> -->
-							<div class="cta">
-								<!-- <a class="btn primary" href="mailto:divarany7@gmail.com">Gmail</a> -->
-								<a class="btn" href="https://www.linkedin.com/in/chhoeut-darwin-17b0383ba/" target="_blank" rel="noreferrer">
-									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6a2.5 2.5 0 0 1 2.48-2.5ZM3 21V9h4v12H3Zm7 0V9h3.8v1.7h.1A4.2 4.2 0 0 1 17.7 8.6C21 8.6 22 10.8 22 14.1V21h-4v-6c0-1.4 0-3.1-1.9-3.1S14 13.6 14 15v6h-4Z"/></svg>
-									<span>LinkedIn</span>
-								</a>
-								<!-- <a class="btn" href="https://www.instagram.com/_daawinnnnn?igsh=MTNwcjVnb3UzM2pxMQ%3D%3D&utm_source=qr" target="_blank" rel="noreferrer">
-									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 4.6A5.4 5.4 0 1 1 6.6 14 5.4 5.4 0 0 1 12 8.6Zm0 2A3.4 3.4 0 1 0 15.4 14 3.4 3.4 0 0 0 12 10.6Zm5.7-2.3a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1Z"/></svg>
-									<span>Instagram</span>
-								</a> -->
-								<!-- <a class="btn" href="https://www.facebook.com/share/1P3R74QSVu/?mibextid=wwXIfr" target="_blank" rel="noreferrer">
-									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 8H16V4h-2.5C10.46 4 9 5.79 9 8.3V10H6v4h3v8h4v-8h3l.5-4H13V8.7c0-.5.2-.7.5-.7Z"/></svg>
-									<span>Facebook</span>
-								</a> -->
-								<a class="btn ghost" href="https://github.com/chhoeutdarwin" target="_blank" rel="noreferrer">
-									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.5 21.9c.6.1.8-.2.8-.6v-2.2c-3.4.8-4.1-1.4-4.1-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.8 1.2 1.8 1.2 1 .1 1.7-.5 2.1-.9.1-.7.4-1.1.7-1.4-2.7-.3-5.6-1.3-5.6-6A4.8 4.8 0 0 1 5.1 5c-.1-.3-.6-1.6.1-3.3 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.7 1.7.2 3 .1 3.3a4.8 4.8 0 0 1 1.3 3.3c0 4.7-2.9 5.7-5.6 6 .4.3.8 1 .8 2v3c0 .4.2.7.8.6A11.2 11.2 0 0 0 12 .8Z"/></svg>
-									<span>GitHub</span>
-								</a>
-								<a class="btn phone-btn" href="https://t.me/Darwin_Chhoeut" target="_blank" rel="noopener noreferrer" aria-label="Contact me on Telegram">
-									<svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true">
-										<path d="M21.8 4.6 18.6 19.7c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.3l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.4 3c.9-.3 1.7.2 1.4 1.6Z"/>
-									</svg>
-									<span>@Darwin_Chhoeut</span>
-								</a>
-								<a class="btn phone-btn" href="tel:+855966356765" aria-label="Call 096 6356 765">
-									<svg viewBox="0 0 24 24" aria-hidden="true">
-										<path d="M6.6 2.5 9.2 2a1.5 1.5 0 0 1 1.7 1l1.1 3.1a1.5 1.5 0 0 1-.4 1.6L10 9.3a14.7 14.7 0 0 0 4.7 4.7l1.6-1.6a1.5 1.5 0 0 1 1.6-.4l3.1 1.1a1.5 1.5 0 0 1 1 1.7l-.5 2.6a2.5 2.5 0 0 1-2.7 2.1C10.6 18.7 5.3 13.4 4.5 6.2A2.5 2.5 0 0 1 6.6 2.5Z"/>
-									</svg>
-									<span>096 6356 765</span>
-								</a>
-							</div>
-						</article>
+<section class="section" id="about">
+  <div class="wrap">
+    <h2 class="h2" data-i18n="nav.about">About</h2>
+    <div class="bento">
+      <article class="tile bio">
+        <p class="big"><span data-i18n="about.t1">Fast learner.</span> <span class="gold-t" data-i18n="about.t2">Curious mind.</span></p>
+        <p class="muted" data-i18n="about.bio">I’m an Information Technology graduate who combines thoughtful design with well-built code. I enjoy creating clear, useful digital experiences that look polished, work smoothly, and make sense from the first interaction.</p>
+        <div class="tags"><span>UI / UX</span><span>Web Dev</span><span>Poster Design</span><span>Figma</span><span>Photoshop</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>MySQL</span><span>Git</span><span>Canva</span><span>VS Code</span></div>
+      </article>
+      <article class="tile stat"><b data-count="8">8</b><span data-i18n="about.projects">Projects Completed</span></article>
+      <article class="tile stat"><b data-count="3">3</b><span data-i18n="about.fields">Design & Dev Fields</span></article>
+      <article class="tile stat"><b data-count="4">4</b><span data-i18n="about.years">Years of Study</span></article>
+      <article class="tile edu">
+        <h3 class="h3" data-i18n="edu.title">Education</h3>
+        <ol class="timeline">
+          <li><time>2022 – 2026</time><strong data-i18n="edu.d1">Bachelor of Science in Information Technology</strong><em>Build Bright University – Siem Reap</em><p class="muted" data-i18n="edu.n1">Graduated with recognizing academic excellence. GPA: 3.32/4.00</p></li>
+          <li><time>2021 – 2022</time><strong data-i18n="edu.d2">High School Diploma</strong><em>Angkor High School</em><p class="muted" data-i18n="edu.n2">Finished Grade 12</p></li>
+        </ol>
+      </article>
+      <article class="tile cert">
+        <h3 class="h3" data-i18n="cert.title">Certifications</h3>
+        <ul>
+          <li><span>🎓</span><div><strong data-i18n="edu.d1">Bachelor of Science in Information Technology</strong><em>Build Bright University</em></div><time>2026</time></li>
+          <li><span>🏅</span><div><strong>Microsoft Office (Word, Excel, PowerPoint)</strong><em>SITS School</em></div><time>2023</time></li>
+        </ul>
+        <a class="btn gold" href="assets/cv/CV_Portfolio.pdf" download data-i18n="hero.cv">Download CV</a>
+      </article>
+    </div>
+  </div>
+</section>
 
-						<form
-							class="card form"
-							id="contactForm"
-							action="https://formspree.io/f/mjyggvqn"
-							method="POST"
-							autocomplete="on"
-						>
-							<h3 class="h3" data-i18n="contact.quick">Quick message</h3>
-							<input type="hidden" name="_subject" value="New portfolio contact message" />
-							<label class="f">
-								<span data-i18n="contact.name">Name</span>
-								<input name="name" type="text" placeholder="Your name" data-i18n-placeholder="contact.namePlaceholder" required />
-							</label>
-							<label class="f">
-								<span data-i18n="contact.email">Email</span>
-								<input name="email" type="email" placeholder="email@example.com" data-i18n-placeholder="contact.emailPlaceholder" required />
-							</label>
-							<label class="f">
-								<span data-i18n="contact.message">Message</span>
-								<textarea name="message" rows="4" placeholder="Hi! I saw your portfolio and…" data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
-							</label>
-							<button class="btn primary" type="submit" data-i18n="contact.send">Send</button>
-							<p class="fine" data-i18n="contact.inbox">Messages are sent directly to my inbox</p>
-						</form>
-					</div>
-				</div>
-			</section>
-		</main>
+<section class="section" id="projects">
+  <div class="wrap">
+    <h2 class="h2" data-i18n="projects.title">Recently Worked</h2>
+    <div class="filters" role="group" aria-label="Filter work">
+      <button class="is-active" data-filter="poster" aria-pressed="true" data-i18n="projects.poster">Poster Design</button>
+      <button data-filter="uxui" aria-pressed="false" data-i18n="projects.uxui">UX/UI Design</button>
+      <button data-filter="website" aria-pressed="false" data-i18n="projects.website">Web Development</button>
+    </div>
+    <div class="pgrid" id="pgrid">
+      <article class="pcard" data-category="poster"><figure><img src="assets/images/posters/haaland-poster.jpg" alt="Football player poster, blue gradient, vertical typography" loading="lazy" data-title="Sports Poster Design" data-caption="Sports poster built on contrast and depth: layered cutout, soft shadows, bold type. Fan-made, non-commercial." /></figure><h3 data-i18n="projects.football">Football Player Poster</h3></article>
+      <article class="pcard" data-category="poster"><figure><img src="assets/images/posters/poster-2.jpg" alt="Coffee campaign poster" loading="lazy" /></figure><h3 data-i18n="projects.coffee">Coffee Campaign</h3></article>
+      <article class="pcard" data-category="poster"><figure><img src="assets/images/posters/poster-3.jpg" alt="Matcha campaign poster" loading="lazy" /></figure><h3 data-i18n="projects.matcha">Matcha Campaign</h3></article>
+      <article class="pcard" data-category="poster"><figure><img src="assets/images/posters/ice-latte-poster.jpg" alt="Moka Ice Latte poster with Khmer typography" loading="lazy" data-title="Ice Latte Campaign" data-caption="Warm coffee gradients, Khmer display typography, soft glow, and clean price tags. Concept work." /></figure><h3 data-i18n="projects.iceLatte">Ice Latte Campaign</h3></article>
 
-		<footer class="footer">
-			<div class="wrap footer-inner">
-				<p class="fine">© <span id="year"></span> Chhoeut Darwin • <span data-i18n="footer.role">Web Developer</span></p>
-				<a class="l" href="#home" data-i18n="footer.backTop">Back to top</a>
-			</div>
-		</footer>
+      <article class="pcard" data-category="uxui" hidden><figure><img src="assets/images/posters/ice-latte-poster.jpg" alt="Urban Trails travel website UI" loading="lazy" /></figure><h3 data-i18n="projects.urban">Urban Trails</h3><p class="meta" data-i18n="projects.meta">UX/UI · Figma · Website design</p><p class="muted" data-i18n="projects.urbanSummary">Travel website UI for discovering destinations and local experiences.</p>
+        <div class="plinks"><a href="https://www.figma.com/proto/Nn4GtgnmZPujlKxviTHvQR/Tour-Travel-UI?node-id=26-177&amp;p=f&amp;t=oZ8zuhuzFvZUdkLS-0&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=26%3A177" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.proto">View prototype</span> ↗</a></div></article>
 
-		<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-		<div class="project-lightbox" id="projectLightbox" hidden>
-			<div class="project-lightbox-backdrop" data-lightbox-close></div>
-			<div class="project-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
-				<button class="project-lightbox-close" type="button" aria-label="Close project preview" data-lightbox-close>
-					<span aria-hidden="true">×</span>
-				</button>
-				<img class="project-lightbox-image" id="lightboxImage" src="" alt="" />
-				<h2 class="project-lightbox-title" id="lightboxTitle"></h2>
-				<p class="project-lightbox-caption" id="lightboxCaption"></p>
-			</div>
-		</div>
-		<script src="js/script.js" defer></script>
-		
-	</body>
+      <article class="pcard" data-category="website" hidden><figure><img src="assets/images/projects/hush.png" alt="Hush website" loading="lazy" /></figure><h3>Hush</h3><div class="plinks"><a href="https://chhoeutdarwin.github.io/Hush/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.demo">Live demo</span> ↗</a><a href="https://github.com/chhoeutdarwin/Hush" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></article>
+      <article class="pcard" data-category="website" hidden><figure><img src="assets/images/projects/tracker.png" alt="Attendance Tracker website" loading="lazy" /></figure><h3>Attendance Tracker</h3><div class="plinks"><a href="https://chhoeutdarwin.github.io/attendance-tracker/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.demo">Live demo</span> ↗</a><a href="https://github.com/chhoeutdarwin/attendance-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></article>
+      <article class="pcard" data-category="website" hidden><figure><img src="assets/images/projects/roomie.png" alt="Roomie website" loading="lazy" /></figure><h3>Roomie</h3><div class="plinks"><a href="https://chhoeutdarwin.github.io/UrRoomie/" target="_blank" rel="noopener noreferrer"><span data-i18n="projects.demo">Live demo</span> ↗</a><a href="https://github.com/chhoeutdarwin/UrRoomie" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <h2 class="h2" data-i18n="nav.contact">Contact</h2>
+    <div class="cgrid">
+      <article class="tile">
+        <h3 class="h3" data-i18n="contact.build">Let’s build something</h3>
+        <p class="muted" data-i18n="contact.open">Open to web development roles, freelance projects, and collaborations.</p>
+        <div class="cta">
+          <a class="btn ghost" href="https://www.linkedin.com/in/chhoeut-darwin-17b0383ba/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/chhoeutdarwin" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn ghost" href="https://t.me/Darwin_Chhoeut" target="_blank" rel="noopener noreferrer">@Darwin_Chhoeut</a>
+          <a class="btn ghost" href="tel:+855966356765">096 6356 765</a>
+          <button class="btn gold" type="button" id="copyPhone" data-i18n="contact.copy">Copy phone number</button>
+        </div>
+      </article>
+      <form class="tile form" id="contactForm" action="https://formspree.io/f/mjyggvqn" method="POST">
+        <h3 class="h3" data-i18n="contact.quick">Quick message</h3>
+        <input type="hidden" name="_subject" value="New portfolio contact message" />
+        <label><span data-i18n="contact.name">Name</span><input name="name" type="text" data-i18n-placeholder="contact.namePh" placeholder="Your name" required /></label>
+        <label><span data-i18n="contact.email">Email</span><input name="email" type="email" placeholder="email@example.com" required /></label>
+        <label><span data-i18n="contact.message">Message</span><textarea name="message" rows="4" data-i18n-placeholder="contact.msgPh" placeholder="Hi! I saw your portfolio and…" required></textarea></label>
+        <button class="btn gold" type="submit" data-i18n="contact.send">Send</button>
+        <p class="fine" data-i18n="contact.inbox">Messages are sent directly to my inbox</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer"><div class="wrap foot"><p class="fine">© <span id="year"></span> Chhoeut Darwin • <span data-i18n="footer.role">Web Developer</span></p><a class="btn ghost" href="#home" data-i18n="footer.top">Back to top</a></div></footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="lb" id="lb" hidden><div class="lb-bg" data-close></div><div class="lb-box" role="dialog" aria-modal="true"><button class="lb-x" data-close aria-label="Close">×</button><img id="lbImg" src="" alt="" /><h3 id="lbTitle"></h3><p id="lbCap" class="muted"></p></div></div>
+<script src="js/script.js" defer></script>
+</body>
 </html>

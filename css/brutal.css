@@ -1,0 +1,62 @@
+/* Neo-brutalist creative theme. Loads AFTER styles.css and overrides it. */
+:root{--bg:#fff4d6;--card:#fff;--card2:#fff4d6;--text:#141414;--muted:#4a4540;--line:#141414;--gold:#ffc933;--gold2:#ffb300;--on-gold:#141414;--pop:#ff5a43;--mint:#8de0c4;--hs:6px 6px 0 #141414;--shadow:var(--hs);--nav:#fff}
+:root[data-theme=dark]{--bg:#01233d;--card:#053861;--card2:#064575;--text:#fff4d6;--muted:rgba(255,244,214,.78);--line:#fff4d6;--gold:#ffd666;--gold2:#ffc233;--on-gold:#141414;--pop:#ff8a76;--mint:#7fd8bd;--hs:6px 6px 0 #000;--shadow:var(--hs);--nav:#053861}
+body{background:var(--bg) radial-gradient(rgba(20,20,20,.13) 1.2px,transparent 1.2px) 0 0/22px 22px;font-family:Poppins,"Kantumruy Pro",sans-serif}
+:root[data-theme=dark] body{background:var(--bg) radial-gradient(rgba(255,244,214,.09) 1.2px,transparent 1.2px) 0 0/22px 22px}
+.glow{display:none}.progress{height:5px;background:var(--pop)}
+/* accent text: coral on cream, gold on navy */
+[data-theme=light] .role,[data-theme=light] .gold-t,[data-theme=light] .stat b,[data-theme=light] .timeline time,[data-theme=light] .cert time,[data-theme=light] .timeline em,[data-theme=light] .cert em,[data-theme=light] .pcard .meta{color:#e03a22}
+.role{color:var(--pop)}[data-theme=dark] .role{color:var(--gold)}
+/* nav */
+.nav{border:2px solid var(--line);border-radius:14px;box-shadow:4px 4px 0 var(--line);background:var(--nav);backdrop-filter:none}
+.logo{border:2px solid var(--line);border-radius:10px;background:var(--gold);color:#141414;font-family:"Bricolage Grotesque",Outfit,sans-serif}
+.links a{border-radius:8px;border:2px solid transparent}.links a:hover,.links a[aria-current]{background:var(--gold);color:#141414!important;border-color:var(--line)}
+.chip-btn,.lang{border:2px solid var(--line);border-radius:10px}.lang button{border-radius:7px}.lang .is-active{background:var(--gold);color:#141414}
+/* buttons */
+.btn{border:2px solid var(--line);border-radius:10px;box-shadow:4px 4px 0 var(--line);background:var(--card);color:var(--text)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--line)}.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--line)}
+.btn.gold{background:var(--gold);color:#141414;border:2px solid var(--line)}
+/* hero */
+.name{font-family:"Bricolage Grotesque","Kantumruy Pro",sans-serif;font-size:clamp(3rem,9.5vw,7.2rem);letter-spacing:-4px;line-height:.92}
+html[lang=km] .name{letter-spacing:0;line-height:1.15}
+.name .ch:hover{color:var(--pop)}
+.hello{display:inline-block;padding:3px 12px;background:var(--gold);color:#141414;border:2px solid var(--line);border-radius:6px;rotate:-2deg;font-weight:700}
+.role{font-family:"Bricolage Grotesque","Kantumruy Pro",sans-serif;font-weight:800}.caret{background:var(--pop)}
+.facts li{border:2px solid var(--line);border-radius:8px;box-shadow:3px 3px 0 var(--line);background:var(--card)}.facts li:nth-child(2){rotate:-1.5deg}.facts li:nth-child(3){rotate:1deg}
+.social a{border:2px solid var(--line);border-radius:10px;box-shadow:3px 3px 0 var(--line);background:var(--card)}.social a:hover{background:var(--gold);color:#141414;transform:translate(-2px,-2px) rotate(-6deg);box-shadow:5px 5px 0 var(--line)}
+.blob{animation:none;border-radius:8px;border:3px solid var(--line);background:#fff;padding:12px 12px 44px;rotate:3deg;box-shadow:10px 10px 0 var(--line);position:relative;transition:rotate .3s}
+.blob:hover{rotate:-1deg}.blob::after{content:"Darwin / dev + design";position:absolute;left:14px;bottom:12px;font:700 .8rem "Bricolage Grotesque",sans-serif;color:#141414}
+.blob img{border-radius:3px;border:2px solid #141414}
+.float{border:2px solid var(--line);border-radius:6px;box-shadow:3px 3px 0 var(--line);background:var(--gold);color:#141414;animation:none;rotate:-6deg}.f2{background:var(--mint);rotate:5deg}.f3{background:var(--pop);rotate:-3deg}
+.float:hover{rotate:0deg}
+.stamp{position:absolute;top:-14px;right:-6px;z-index:2;padding:10px 14px;max-width:130px;text-align:center;line-height:1.15;background:var(--pop);color:#141414;border:2px solid var(--line);border-radius:10px;box-shadow:4px 4px 0 var(--line);font:800 .78rem "Bricolage Grotesque","Kantumruy Pro",sans-serif;rotate:10deg;animation:wig 3s ease-in-out infinite}
+@keyframes wig{50%{rotate:5deg}}
+/* marquee */
+.marquee{overflow:hidden;background:var(--gold);color:#141414;border-block:3px solid var(--line);rotate:-1.5deg;margin:20px -20px 0;padding:10px 0;position:relative;z-index:2}
+.track{display:flex;width:max-content;animation:run 28s linear infinite}.track span{white-space:nowrap;font:800 1.15rem "Bricolage Grotesque",sans-serif;padding-right:0}
+@keyframes run{to{transform:translateX(-50%)}}
+/* sections */
+.h2{display:inline-flex;padding:6px 20px;background:var(--gold);color:#141414;border:2px solid var(--line);border-radius:10px;box-shadow:5px 5px 0 var(--line);rotate:-1.2deg;font-family:"Bricolage Grotesque","Kantumruy Pro",sans-serif;font-weight:800;margin-bottom:34px}.h2::after{display:none}
+.tile{border:2px solid var(--line);border-radius:16px;box-shadow:var(--hs);background:var(--card)}
+.tile:hover{border-color:var(--line);transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--line)}
+.bio{rotate:-.5deg}.edu{rotate:.6deg}.cert{rotate:-.5deg}
+.stat{color:#141414}.stat span{color:#141414;font-weight:600}.stat b{font-family:"Bricolage Grotesque",sans-serif;font-size:3.6rem;color:#141414!important}
+.bento .stat:nth-child(2){background:var(--gold);rotate:-1.5deg}.bento .stat:nth-child(3){background:var(--mint);rotate:1.2deg}.bento .stat:nth-child(4){background:var(--pop);rotate:-.8deg}
+.big{font-family:"Bricolage Grotesque","Kantumruy Pro",sans-serif;font-weight:800}
+.tags span{border:2px solid var(--line);border-radius:6px;background:var(--card);box-shadow:2px 2px 0 var(--line)}.tags span:hover{background:var(--gold);color:#141414}
+.timeline{border-left:3px solid var(--line)}.timeline li::before{border:2px solid var(--line);box-shadow:none;background:var(--gold);left:-26px}
+.cert li{border:2px solid var(--line);border-left-width:2px;border-radius:12px;background:var(--card2)}
+/* projects */
+.filters button{border:2px solid var(--line);border-radius:10px;box-shadow:3px 3px 0 var(--line);background:var(--card);color:var(--text)}.filters button:hover{transform:translate(-2px,-2px)}
+.filters .is-active{background:var(--pop);color:#141414}
+.pcard{border:2px solid var(--line);border-radius:16px;box-shadow:var(--hs);background:var(--card)}.pcard:nth-child(odd){rotate:-1deg}.pcard:nth-child(even){rotate:1deg}
+.pcard:hover{border-color:var(--line);rotate:0deg;box-shadow:10px 10px 0 var(--line)}.pcard figure{border:2px solid var(--line);border-radius:8px}
+.plinks a{border:2px solid var(--line);border-radius:8px;background:var(--gold);color:#141414}.plinks a:hover{background:var(--pop)}
+/* contact + misc */
+.form input,.form textarea{border:2px solid var(--line);border-radius:10px;background:var(--card2);color:var(--text)}.form input:focus,.form textarea:focus{box-shadow:4px 4px 0 var(--gold);border-color:var(--line)}
+.foot{border-top:3px solid var(--line)}
+.toast{border:2px solid var(--line);border-radius:10px;box-shadow:4px 4px 0 var(--line);background:var(--gold);color:#141414}
+.lb-box{border:3px solid #fff4d6;border-radius:16px;box-shadow:10px 10px 0 #000}.lb-x{border:2px solid #000;border-radius:8px}
+.pet i{border:2px solid var(--line);border-radius:8px;background:var(--gold)}
+@media(max-width:900px){.stamp{right:0}.bio,.edu,.cert{rotate:0deg}}
+@media(prefers-reduced-motion:reduce){.track{animation:none}.stamp{animation:none}}
