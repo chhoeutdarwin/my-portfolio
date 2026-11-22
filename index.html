@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="color-scheme" content="dark" />
 		<meta name="theme-color" content="#0e1625" />
-		<link rel="icon" href="assets/img/pfp.jpg" />
+		<link rel="icon" href="assets/images/profile/pfp.jpg" />
 		<title>Chhoeut Darwin - Portfolio</title>
 		<meta name="description" content="Web developer portfolio focused on clean UI engineering and fast, responsive sites." />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,8 +39,8 @@
 							 <li><a class="a" href="#projects" data-i18n="nav.projects">My work</a></li>
 							<li><a class="a" href="#experience" data-i18n="nav.experience">Experience</a></li>
 							
-							<li><a class="a" href="#skills" data-i18n="nav.skills">Skills</a></li>
-						<!-- <li><a class="a" href="#contact">Contact</a></li> -->
+							<!-- <li><a class="a" href="#skills" data-i18n="nav.skills">Skills</a></li> -->
+						<li><a class="a" href="#contact" data-i18n="nav.contact">Contact</a></li>
 						</ul>
 					</nav>
 
@@ -104,7 +104,7 @@
 					<aside class="hero-right" aria-label="Hero artwork">
 						<div class="art">
 							<div class="frame">
-								<div class="avatar"><img src="assets/img/pfp.jpg" alt="Portrait of Chhoeut Darwin" width="260" height="260"></div>
+								<div class="avatar"><img src="assets/images/profile/pfp.jpg" alt="Portrait of Chhoeut Darwin" width="260" height="260"></div>
 								<!-- <div class="gadget g1" aria-hidden="true"></div>
 								<div class="gadget g2" aria-hidden="true"></div> -->
 							</div>
@@ -120,28 +120,37 @@
 					<div class="about-grid">
 						<div class="about-visual">
 							<div class="about-circle">
-								<img src="assets/img/pfp.jpg" alt="Darwin presenting a project" loading="lazy" />
+								<img src="assets/images/profile/pfp.jpg" alt="Darwin presenting a project" loading="lazy" />
 							</div>
 							<ul class="about-chips" aria-label="Design and development skills">
 								<li class="about-chip about-chip-one" data-i18n="about.chips.ui">UI / UX Design</li>
 								<li class="about-chip about-chip-two" data-i18n="about.chips.web">Web Development</li>
 								<li class="about-chip about-chip-three" data-i18n="about.chips.poster">Poster Design</li>
 								<li class="about-chip about-chip-four">Figma</li>
-								<li class="about-chip about-chip-five" data-i18n="about.chips.responsive">Responsive Layout</li>
+								<li class="about-chip about-chip-five" data-i18n="about.chips.responsive">AI-Assisted Research</li>
 								<li class="about-chip about-chip-six">Photoshop</li>
+								<li class="about-chip about-chip-seven" data-i18n="about.chips.basicIt">Basic IT Support</li>
 							</ul>
 						</div>
 
 						<div class="about-content">
 							<p class="about-eyebrow" data-i18n="about.label">About Me</p>
-							<h2 class="about-title"><span data-i18n="about.title">Who is </span><em>Chhoeut Darwin</em><span data-i18n="about.question">?</span></h2>
+							<h2 class="about-title">
+								<span data-i18n="about.name">Chhoeut Darwin </span> |
+								<br />
+								<em>
+									<span class="about-trait" data-i18n="about.traits.first">Fast learner.</span>
+									<span class="about-trait" data-i18n="about.traits.second">Curious mind.</span>
+									<!-- <span class="about-trait" data-i18n="about.traits.third">Finisher.</span> -->
+								</em>
+							</h2>
 							<p class="about-bio">
 								<span data-i18n="about.bio">I’m an Information Technology graduate who combines thoughtful design with well-built code. I enjoy creating clear, useful digital experiences that look polished, work smoothly, and make sense from the first interaction.</span>
 							</p>
 
 							<div class="about-stats" aria-label="Portfolio highlights">
 								<div class="about-stat">
-									<strong>5+</strong>
+									<strong>7+</strong>
 									<span data-i18n="about.projects">Projects Completed</span>
 								</div>
 								<div class="about-stat">
@@ -182,11 +191,11 @@
 					<div class="grid-3 project-grid">
 
             <!-- ============ TAB 1: POSTER DESIGN ============
-                 EDIT: replace the image (assets/img/...) and the title. Keep class="card p" data-category="poster". -->
+                 EDIT: replace the image (assets/images/posters/) and the title. Keep class="card p" data-category="poster". -->
             <article class="card p poster-card" data-category="poster">
               <figure class="thumb one">
                 <img
-                  src="assets/img/haaland_Poster.jpg"
+                  src="assets/images/posters/haaland-poster.jpg"
                   alt="Football player poster design featuring Haaland in a Manchester City kit, blue gradient background with large vertical typography"
                   loading="lazy"
                   width="1200"
@@ -201,20 +210,20 @@
             </article>
             <article class="card p" data-category="poster">
               <figure class="thumb two">
-                <img src="assets/img/Poster2.jpg" alt="Coffee campaign poster" loading="lazy" />
+                <img src="assets/images/posters/poster-2.jpg" alt="Coffee campaign poster" loading="lazy" />
               </figure>
               <h3 class="h3" data-i18n="projects.coffee">Coffee Campaign</h3>
             </article>
             <article class="card p" data-category="poster">
               <figure class="thumb three">
-                <img src="assets/img/Poster3.jpg" alt="Matcha campaign poster" loading="lazy" />
+                <img src="assets/images/posters/poster-3.jpg" alt="Matcha campaign poster" loading="lazy" />
               </figure>
               <h3 class="h3" data-i18n="projects.matcha">Matcha Campaign</h3>
             </article>
              <article class="card p poster-card" data-category="poster">
   <figure class="thumb one">
     <img
-      src="assets/img/IceLatte_Poster.jpg"
+      src="assets/images/posters/ice-latte-poster.jpg"
       alt="Moka Ice Latte promotional poster with two coffee cups, brown gradient background, and Khmer typography"
       width="1200"
       height="1697"
@@ -230,17 +239,10 @@ data-i18n-caption="projects.modalIceCaption" />
 			 
             <article class="card p poster-card project-extra project-disabled" data-category="poster" hidden>
               <figure class="thumb one">
-                <img src="assets/img/Poster1.jpg" alt="Additional poster design concept" loading="lazy" />
+                <img src="assets/images/posters/poster-1.jpg" alt="Additional poster design concept" loading="lazy" />
               </figure>
               <h3 class="h3 card-title" data-i18n="projects.posterConcept">Poster Design Concept</h3>
             </article>
-			  <article class="card p poster-card project-extra project-disabled" data-category="poster" hidden>
-              <figure class="thumb one">
-                <img src="assets/img/Poster5.jpg" alt="Additional poster design concept" loading="lazy" />
-              </figure>
-              <h3 class="h3 card-title" data-i18n="projects.posterConcept">Poster Design Concept</h3>
-            </article>
-
             <!-- ============ TAB 2: UX/UI = CASE STUDY CARDS ============
                  Each card = cover image + title + meta + 1-line summary + link.
                  EDIT: cover image, title, case-meta (Role · Tool · Time), case-summary (Problem -> Solution).
@@ -248,36 +250,9 @@ data-i18n-caption="projects.modalIceCaption" />
                  <a href="case-studies/your-project.html">Read case study <span>&nearr;</span></a>
                  and add a Figma link:
                  <a href="PASTE-YOUR-FIGMA-SHARE-LINK" target="_blank" rel="noopener noreferrer">Figma prototype <span>&nearr;</span></a> -->
-            <article class="card p case project-disabled" data-category="uxui">
-              <figure class="thumb one">
-                <img src="assets/img/Dash.jpg" alt="Dashboard UI cover" loading="lazy" />
-              </figure>
-              <h3 class="h3" data-i18n="projects.dashboard">Dashboard UI</h3>
-              <p class="case-meta" data-i18n="projects.caseMeta">UX/UI · Figma · Case study</p>
-              <p class="case-summary" data-i18n="projects.dashboardSummary">Dashboard concept for tracking activity and tasks at a glance.</p>
-              <div class="project-links"><span class="chip-soon" data-i18n="projects.comingSoon">Case study coming soon</span></div>
-            </article>
-            <article class="card p case project-disabled" data-category="uxui">
-              <figure class="thumb one">
-                <img src="assets/img/Mobile.jpg" alt="Shopping app UI cover" loading="lazy" />
-              </figure>
-              <h3 class="h3" data-i18n="projects.shopping">Shopping App</h3>
-              <p class="case-meta" data-i18n="projects.caseMeta">UX/UI · Figma · Case study</p>
-              <p class="case-summary" data-i18n="projects.shoppingSummary">Mobile shopping flow from browsing to checkout.</p>
-              <div class="project-links"><span class="chip-soon" data-i18n="projects.comingSoon">Case study coming soon</span></div>
-            </article>
-            <article class="card p case project-disabled" data-category="uxui">
-              <figure class="thumb one">
-                <img src="assets/img/Cake.jpg" alt="Bakery app UI cover" loading="lazy" />
-              </figure>
-              <h3 class="h3" data-i18n="projects.bakery">Bakery App</h3>
-              <p class="case-meta" data-i18n="projects.caseMeta">UX/UI · Figma · Case study</p>
-              <p class="case-summary" data-i18n="projects.bakerySummary">Ordering app screens for a small bakery.</p>
-              <div class="project-links"><span class="chip-soon" data-i18n="projects.comingSoon">Case study coming soon</span></div>
-            </article>
             <article class="card p case" data-category="uxui">
               <figure class="thumb one">
-                <img src="assets/img/IceLatte_Poster.jpg" alt="Urban Trails travel website UI" loading="lazy" />
+                <img src="assets/images/posters/ice-latte-poster.jpg" alt="Urban Trails travel website UI" loading="lazy" />
               </figure>
               <h3 class="h3" data-i18n="projects.urban">Urban Trails</h3>
               <p class="case-meta" data-i18n="projects.websiteMeta">UX/UI · Figma · Website design</p>
@@ -291,7 +266,7 @@ data-i18n-caption="projects.modalIceCaption" />
                  EDIT: title, image, Live demo + GitHub links. Add more cards by copying one <article>. -->
             <article class="card p" data-category="website">
               <figure class="thumb one">
-                <img src="assets/img/Hush.png" alt="Hush website" loading="lazy" />
+                <img src="assets/images/projects/hush.png" alt="Hush website" loading="lazy" />
               </figure>
               <h3 class="h3">Hush</h3>
               <div class="project-links">
@@ -301,7 +276,7 @@ data-i18n-caption="projects.modalIceCaption" />
             </article>
             <article class="card p" data-category="website">
               <figure class="thumb one">
-                <img src="assets/img/Tracker.png" alt="Attendance Tracker website" loading="lazy" />
+                <img src="assets/images/projects/tracker.png" alt="Attendance Tracker website" loading="lazy" />
               </figure>
               <h3 class="h3">Attendance Tracker</h3>
               <div class="project-links">
@@ -311,7 +286,7 @@ data-i18n-caption="projects.modalIceCaption" />
             </article>
             <article class="card p" data-category="website">
               <figure class="thumb one">
-                <img src="assets/img/Roomie.png" alt="Roomie website" loading="lazy" />
+                <img src="assets/images/projects/roomie.png" alt="Roomie website" loading="lazy" />
               </figure>
               <h3 class="h3">Roomie</h3>
               <div class="project-links">
@@ -363,7 +338,7 @@ data-i18n-caption="projects.modalIceCaption" />
 							<div class="experience-art-shape experience-art-shape-one" aria-hidden="true"></div>
 							<div class="experience-art-shape experience-art-shape-two" aria-hidden="true"></div>
 							<figure class="experience-art-frame">
-								<img src="assets/img/anime.jpg" alt="Illustration of a friendly professional carrying a notebook" loading="lazy" />
+								<img src="assets/images/miscellaneous/anime.jpg" alt="Illustration of a friendly professional carrying a notebook" loading="lazy" />
 							</figure>
 							<div class="experience-art-caption">
 								<span class="experience-art-dot" aria-hidden="true"></span>
@@ -374,6 +349,7 @@ data-i18n-caption="projects.modalIceCaption" />
 				</div>
 			</section>
 
+			<!--
 			<section class="section" id="skills">
     <div class="wrap">
         <div class="head">
@@ -381,7 +357,7 @@ data-i18n-caption="projects.modalIceCaption" />
         </div>
 
         <div class="skills-grid" aria-label="Technology skills">
-            <!-- HTML5 -->
+            HTML5
             <div class="skill-card" data-category="frontend">
                 <div class="skill-icon-wrapper">
                     <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" loading="lazy" />
@@ -390,7 +366,7 @@ data-i18n-caption="projects.modalIceCaption" />
                 <span class="skill-tag">Frontend</span>
             </div>
 
-            <!-- CSS3 -->
+            CSS3
             <div class="skill-card" data-category="frontend">
                 <div class="skill-icon-wrapper">
                     <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" loading="lazy" />
@@ -399,7 +375,7 @@ data-i18n-caption="projects.modalIceCaption" />
                 <span class="skill-tag">Styling</span>
             </div>
 
-            <!-- JavaScript -->
+            JavaScript
             <div class="skill-card" data-category="frontend">
                 <div class="skill-icon-wrapper">
                     <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy" />
@@ -408,7 +384,7 @@ data-i18n-caption="projects.modalIceCaption" />
                 <span class="skill-tag">Interactive</span>
             </div>
 
-            <!-- MySQL -->
+            MySQL
             <div class="skill-card" data-category="database">
                 <div class="skill-icon-wrapper">
                     <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" loading="lazy" />
@@ -417,7 +393,7 @@ data-i18n-caption="projects.modalIceCaption" />
                 <span class="skill-tag">Database</span>
             </div>
 
-            <!-- Git -->
+            Git
             <div class="skill-card" data-category="tools">
                 <div class="skill-icon-wrapper">
                     <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" loading="lazy" />
@@ -426,7 +402,7 @@ data-i18n-caption="projects.modalIceCaption" />
                 <span class="skill-tag">Version Control</span>
             </div>
 
-            <!-- Figma -->
+            Figma
             <div class="skill-card" data-category="tools">
                 <div class="skill-icon-wrapper">
                     <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" loading="lazy" />
@@ -435,7 +411,7 @@ data-i18n-caption="projects.modalIceCaption" />
                 <span class="skill-tag">UI/UX Design</span>
             </div>
 
-            <!-- Photoshop -->
+            Photoshop
             <div class="skill-card" data-category="tools">
                 <div class="skill-icon-wrapper">
                     <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-plain.svg" alt="Photoshop" loading="lazy" />
@@ -444,7 +420,7 @@ data-i18n-caption="projects.modalIceCaption" />
                 <span class="skill-tag">Graphics</span>
             </div>
 
-            <!-- Canva -->
+            Canva
             <div class="skill-card" data-category="tools">
                 <div class="skill-icon-wrapper">
                     <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva" loading="lazy" />
@@ -453,7 +429,7 @@ data-i18n-caption="projects.modalIceCaption" />
                 <span class="skill-tag">Quick Assets</span>
             </div>
 
-            <!-- VS Code -->
+            VS Code
             <div class="skill-card" data-category="tools">
                 <div class="skill-icon-wrapper">
                     <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" loading="lazy" />
@@ -465,6 +441,7 @@ data-i18n-caption="projects.modalIceCaption" />
         </div>
     </div>
 </section>
+			-->
 			<section class="section" id="contact">
 				<div class="wrap">
 					<div class="head">

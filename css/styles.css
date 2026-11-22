@@ -1009,6 +1009,7 @@ html[lang="km"] .title-accent {
 .about-chip-four { transform: rotate(6deg); }
 .about-chip-five { transform: rotate(-5deg); }
 .about-chip-six { transform: rotate(3deg); }
+.about-chip-seven { transform: rotate(-4deg); }
 
 .about-content {
 	min-width: 0;
@@ -1036,6 +1037,10 @@ html[lang="km"] .title-accent {
 .about-title em {
 	color: #fbb02d;
 	font-style: italic;
+}
+
+.about-trait {
+	display: block;
 }
 
 .about-bio {
