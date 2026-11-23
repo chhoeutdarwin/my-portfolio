@@ -271,6 +271,7 @@ a {
 }
 
 .pill {
+	position: relative;
 	width: 100%;
 	max-width: 980px;
 	display: flex;
@@ -283,6 +284,20 @@ a {
 	background: var(--nav-bg);
 	box-shadow: 0 12px 32px rgba(18, 24, 30, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 	transition: background-color 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.logo {
+	flex: 0 0 44px;
+}
+
+.nav {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.topbar-actions {
+	margin-left: auto;
 }
 
 .logo {
@@ -443,8 +458,21 @@ a {
 	right: 22px;
 	bottom: 22px;
 	z-index: 60;
-	background: var(--nav-bg);
-	box-shadow: 0 12px 28px rgba(18, 24, 30, 0.18);
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	justify-content: center;
+	background: #012c4e;
+	border: 1px solid rgba(234, 210, 146, 0.48);
+	color: #ead292;
+	box-shadow: 0 12px 28px rgba(1, 44, 78, 0.28);
+}
+
+:root[data-theme="light"] .floating-theme {
+	background: #ead292;
+	border-color: rgba(1, 44, 78, 0.28);
+	color: #012c4e;
+	box-shadow: 0 12px 28px rgba(1, 44, 78, 0.18);
 }
 
 .theme-icon {
@@ -1934,6 +1962,12 @@ body.lightbox-open {
 }
 
 @media (max-width: 760px) {
+	.nav {
+		position: static;
+		transform: none;
+		margin-left: auto;
+	}
+
 	.nav-btn {
 		display: inline-flex;
 		align-items: center;
@@ -2044,6 +2078,7 @@ body.lightbox-open {
 	.title-accent .kinetic-letter {
 		transition: none;
 	}
+
 }
 /* ==========================================
    COMPACT SKILLS SECTION DESIGN
