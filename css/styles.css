@@ -2336,7 +2336,7 @@ body.lightbox-open {
   color: var(--muted);
 }
 
-/* ===== Case-study cards (UX/UI tab) ===== */
+/* ===== Case-study cards (UI/UX tab) ===== */
 .see-more-projects[hidden] {
   display: none;
 }
@@ -2692,10 +2692,6 @@ body.lightbox-open {
   --card-shadow: 0 14px 40px rgba(1, 44, 78, 0.1);
 }
 
-/* Keep only Urban Trails visible in the UX/UI project tab. */
-.project-disabled {
-  display: none !important;
-}
 
 /* View Projects: outline-to-fill interaction */
 .hero .cta .btn.primary {
