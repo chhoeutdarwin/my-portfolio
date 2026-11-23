@@ -1,8 +1,9 @@
 {
-    // "liveServer.settings.port": 5502
-    
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
     "liveServer.settings.port": 5502,
-    "liveServer.settings.CustomBrowser": "brave"
-    
-
+    "liveServer.settings.root": "/",
+    "liveServer.settings.CustomBrowser": "brave",
+    "liveServer.settings.fullReload": true,
+    "liveServer.settings.wait": 100
 }

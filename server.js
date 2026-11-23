@@ -9,7 +9,23 @@ const PORT = Number(process.env.PORT) || 5000;
 
 app.use(cors());
 app.use(express.json({ limit: "200kb" }));
-app.use(express.static(path.join(__dirname)));
+app.use((req, res, next) => {
+	if (req.method === "GET") {
+		res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+		res.setHeader("Pragma", "no-cache");
+		res.setHeader("Expires", "0");
+	}
+	next();
+});
+app.use(express.static(path.join(__dirname), {
+	etag: false,
+	lastModified: false,
+	setHeaders: (res) => {
+		res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+		res.setHeader("Pragma", "no-cache");
+		res.setHeader("Expires", "0");
+	},
+}));
 
 app.get("/api/health", (_req, res) => {
 	res.json({ ok: true });

@@ -45,7 +45,7 @@
 			"skills.interactive": "Interactive", "skills.database": "Database", "skills.versionControl": "Version Control",
 			"skills.uiux": "UI/UX Design", "skills.graphics": "Graphics", "skills.quickAssets": "Quick Assets", "skills.ide": "IDE Editor",
 			"contact.title": "Contact", "contact.build": "Let’s build something",
-			"contact.open": "Open to web development roles, freelance projects, and collaborations.",
+			"contact.open": "Open to internships, web development roles, and collaborations.",
 			"contact.quick": "Quick message", "contact.name": "Name", "contact.email": "Email", "contact.message": "Message",
 			"contact.namePlaceholder": "Your name", "contact.emailPlaceholder": "email@example.com",
 			"contact.messagePlaceholder": "Hi! I saw your portfolio and…", "contact.send": "Send",
@@ -66,9 +66,9 @@
 			"about.downloadCv": "ទាញយក CV", "about.chips.ui": "រចនា UI / UX", "about.chips.web": "អភិវឌ្ឍន៍វែបសាយ",
 			"about.chips.poster": "រចនាប៉ុស្ត័រ", "about.chips.responsive": "ការស្រាវជ្រាវជំនួយដោយ AI", "about.chips.basicIt": "ជំនួយបច្ចេកទេស IT មូលដ្ឋាន",
 			"projects.title": "ការងារថ្មីៗ", "projects.poster": "រចនាប៉ុស្ត័រ", "projects.uxui": "រចនា UX/UI",
-			"projects.website": "អភិវឌ្ឍន៍វែបសាយ", "projects.football": "ប៉ុស្ត័រអត្តពលិកបាល់ទាត់",
-			"projects.coffee": "យុទ្ធនាការកាហ្វេ", "projects.matcha": "យុទ្ធនាការម៉ាចា", "projects.iceLatte": "យុទ្ធនាការកូឡាតេទឹកកក",
-			"projects.posterConcept": "គំនិតប៉ុស្ត័រ", "projects.dashboard": "ផ្ទាំងគ្រប់គ្រង",
+			"projects.website": "អភិវឌ្ឍន៍វែបសាយ", "projects.football": "Football Player Poster",
+			"projects.coffee": "Coffee Campaign", "projects.matcha": "Matcha Campaign", "projects.iceLatte": "Ice Latte Campaign",
+			"projects.posterConcept": "Poster Design Concept", "projects.dashboard": "ផ្ទាំងគ្រប់គ្រង",
 			"projects.modalSportsTitle": " Poster កីឡា",
 			"projects.modalSportsCaption": "Poster កីឡាដែលបង្កើតដោយការប្រៀបធៀប និងជម្រៅ៖ កាត់ស្រទាប់ ស្រមោលស្រាល និងអក្សរចម្បង។ ស្នាដៃគំនិតមិនមែនសម្រាប់ពាណិជ្ជកម្ម។",
 			"projects.modalIceTitle": "Ice Latte Campaign",
@@ -93,7 +93,7 @@
 			"skills.interactive": "អន្តរកម្ម", "skills.database": "មូលដ្ឋានទិន្នន័យ", "skills.versionControl": "គ្រប់គ្រងកំណែ",
 			"skills.uiux": "រចនា UI/UX", "skills.graphics": "ក្រាហ្វិក", "skills.quickAssets": "សន្ដិសម្រស់រហ័ស", "skills.ide": "កម្មវិធីកែសម្រួល",
 			"contact.title": "ទំនាក់ទំនង", "contact.build": "តោះបង្កើតអ្វីមួយ",
-			"contact.open": "ទទួលការងារអភិវឌ្ឍន៍វែបសាយ គម្រោងឯករាជ្យ និងការសហការបាន។",
+			"contact.open": "កំពុងស្វែងរកឱកាសកម្មសិក្សា ការងារអភិវឌ្ឍន៍វែបសាយ និងការសហការ។",
 			"contact.quick": "ផ្ញើសាររហ័ស", "contact.name": "ឈ្មោះ", "contact.email": "អ៊ីមែល", "contact.message": "សារ",
 			"contact.namePlaceholder": "ឈ្មោះរបស់អ្នក", "contact.emailPlaceholder": "email@example.com",
 			"contact.messagePlaceholder": "សួស្តី! ខ្ញុំបានមើលផលប្រមុខជំនាញរបស់អ្នក…", "contact.send": "ផ្ញើ",
@@ -313,6 +313,25 @@
 		window.clearTimeout(showToast._t);
 		showToast._t = window.setTimeout(() => toastEl.classList.remove("show"), 2200);
 	};
+
+	const copyEmailButtons = $$(".copy-email-btn");
+	copyEmailButtons.forEach((button) => {
+		button.addEventListener("click", async () => {
+			const email = button.dataset.email || "";
+			try {
+				await navigator.clipboard.writeText(email);
+				button.classList.add("is-copied");
+				button.setAttribute("aria-label", "Email address copied");
+				showToast("Email address copied.");
+				window.setTimeout(() => {
+					button.classList.remove("is-copied");
+					button.setAttribute("aria-label", "Copy email address");
+				}, 1800);
+			} catch {
+				showToast(email);
+			}
+		});
+	});
 
 	// Mobile menu
 	if (navBtn && menu) {

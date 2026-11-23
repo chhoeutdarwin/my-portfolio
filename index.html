@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="color-scheme" content="dark" />
-		<meta name="theme-color" content="#0e1625" />
+		<meta name="theme-color" content="#012c4e" />
 		<link rel="icon" href="assets/images/profile/pfp.jpg" />
 		<title>Chhoeut Darwin - Portfolio</title>
 		<meta name="description" content="Web developer portfolio focused on clean UI engineering and fast, responsive sites." />
@@ -15,7 +15,7 @@
 		rel="stylesheet"
 		/>
 
-		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/styles.css?v=3" />
 	</head>
 	<body>
 		<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
@@ -102,11 +102,11 @@
 					</div>
 
 					<aside class="hero-right" aria-label="Hero artwork">
-						<div class="art">
-							<div class="frame">
-								<div class="avatar"><img src="assets/images/profile/pfp.jpg" alt="Portrait of Chhoeut Darwin" width="260" height="260"></div>
-								<!-- <div class="gadget g1" aria-hidden="true"></div>
-								<div class="gadget g2" aria-hidden="true"></div> -->
+						<div class="hero-editorial">
+							<div class="hero-portrait-card">
+								<img src="assets/images/profile/pfp.jpg" alt="Portrait of Chhoeut Darwin" width="260" height="260" />
+								<span class="hero-portrait-caption">CHHOEUT DARWIN</span>
+								<span class="hero-portrait-plus" aria-hidden="true">*</span>
 							</div>
 						</div>
 					</aside>
@@ -140,7 +140,7 @@
 								<br />
 								<em>
 									<span class="about-trait" data-i18n="about.traits.first">Fast learner.</span>
-									<span class="about-trait" data-i18n="about.traits.second">Curious mind.</span>
+									<!-- <span class="about-trait" data-i18n="about.traits.second">Curious mind.</span> -->
 									<!-- <span class="about-trait" data-i18n="about.traits.third">Finisher.</span> -->
 								</em>
 							</h2>
@@ -451,12 +451,18 @@ data-i18n-caption="projects.modalIceCaption" />
 					<div class="grid-2">
 						<article class="card">
 							<h3 class="h3" data-i18n="contact.build">Let’s build something</h3>
-							<p class="muted" data-i18n="contact.open">Open to web development roles, freelance projects, and collaborations.</p>
+							<p class="muted" data-i18n="contact.open">Open to internships, web development roles, and collaborations.</p>
 							<!-- <a class="contact-phone" href="tel:+85512345678">
 								<span class="contact-phone-label">Phone</span>
 								<span>+855 12 345 678</span>
 							</a> -->
 							<div class="cta">
+								<button class="btn copy-email-btn" type="button" data-email="chabmaisa@gmail.com" aria-label="Copy email address">
+									<span class="copy-email-text">darwinchhoeut@gmail.com</span>
+									<svg viewBox="0 0 24 24" aria-hidden="true">
+										<path d="M8 7V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2Zm2 0h5a2 2 0 0 1 2 2v5h2V5h-9v2ZM6 9v9h9V9H6Z"/>
+									</svg>
+								</button>
 								<!-- <a class="btn primary" href="mailto:divarany7@gmail.com">Gmail</a> -->
 								<a class="btn" href="https://www.linkedin.com/in/chhoeut-darwin-17b0383ba/" target="_blank" rel="noreferrer">
 									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6a2.5 2.5 0 0 1 2.48-2.5ZM3 21V9h4v12H3Zm7 0V9h3.8v1.7h.1A4.2 4.2 0 0 1 17.7 8.6C21 8.6 22 10.8 22 14.1V21h-4v-6c0-1.4 0-3.1-1.9-3.1S14 13.6 14 15v6h-4Z"/></svg>
@@ -537,7 +543,7 @@ data-i18n-caption="projects.modalIceCaption" />
 				<p class="project-lightbox-caption" id="lightboxCaption"></p>
 			</div>
 		</div>
-		<script src="js/script.js" defer></script>
+		<script src="js/script.js?v=3" defer></script>
 		
 	</body>
 </html>
