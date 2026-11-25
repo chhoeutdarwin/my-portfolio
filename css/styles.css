@@ -2718,3 +2718,208 @@ body.lightbox-open {
   color: var(--on-primary);
   box-shadow: 0 14px 30px rgba(234, 210, 146, 0.18);
 }
+
+/* Two-column project preview with a stacked mobile layout. */
+.project-lightbox-dialog {
+  justify-items: stretch;
+  width: min(1120px, 100%);
+  padding: 32px;
+  overflow-y: auto;
+}
+
+.project-lightbox-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 30px;
+}
+
+.project-lightbox-info {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  color: #d7f2e8;
+}
+
+.project-lightbox-title {
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.project-lightbox-caption {
+  margin: 0 0 18px;
+  color: rgba(215, 242, 232, 0.82);
+  line-height: 1.55;
+  text-align: left;
+}
+
+.project-lightbox-image {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  max-height: calc(100vh - 112px);
+}
+
+.project-lightbox-dialog.poster-project {
+  width: min(1180px, 100%);
+  padding: 24px;
+}
+
+.project-lightbox-dialog.poster-project .project-lightbox-content {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 22px;
+}
+
+.project-lightbox-dialog.poster-project .project-lightbox-info {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: stretch;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.project-lightbox-eyebrow {
+  margin: 0 0 10px;
+  color: #ead292;
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.project-lightbox-dialog.poster-project .project-lightbox-title {
+  margin: 0 0 10px;
+  font-size: clamp(1.7rem, 2.4vw, 2.1rem);
+  line-height: 1.15;
+  text-align: left;
+}
+
+.project-lightbox-dialog.poster-project .project-lightbox-caption {
+  margin: 0;
+  color: rgba(215, 242, 232, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.project-lightbox-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.project-lightbox-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 13px;
+  border: 1px solid rgba(94, 234, 212, 0.28);
+  border-radius: 999px;
+  background: rgba(20, 54, 63, 0.8);
+  color: #ead292;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.project-lightbox-divider {
+  width: 100%;
+  height: 1px;
+  margin: 0 0 20px;
+  background: rgba(215, 242, 232, 0.16);
+}
+
+.project-lightbox-info h3 {
+  margin: 0 0 10px;
+  color: #d7f2e8;
+  font:
+    700 1rem "Outfit",
+    system-ui,
+    sans-serif;
+}
+
+.project-lightbox-details ul {
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(215, 242, 232, 0.82);
+  line-height: 1.5;
+}
+
+.project-lightbox-details li + li {
+  margin-top: 4px;
+}
+
+.project-lightbox-dialog.poster-project .project-lightbox-details ul {
+  margin: 0 0 20px;
+  padding-left: 18px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.project-lightbox-dialog.poster-project .project-lightbox-details li + li {
+  margin-top: 5px;
+}
+
+.project-lightbox-dialog.poster-project .project-lightbox-details li::marker {
+  color: #ead292;
+}
+
+.project-lightbox-dialog.poster-project .project-lightbox-image {
+  height: min(82vh, 760px);
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
+}
+
+@media (max-width: 768px) {
+  .project-lightbox-dialog {
+    width: min(680px, 100%);
+    max-height: calc(100vh - 24px);
+    padding: 20px;
+  }
+
+  .project-lightbox-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .project-lightbox-image {
+    grid-column: 1;
+    grid-row: 1;
+    max-height: 42vh;
+  }
+
+  .project-lightbox-info {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .project-lightbox-dialog.poster-project {
+    padding: 14px;
+  }
+
+  .project-lightbox-dialog.poster-project .project-lightbox-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .project-lightbox-dialog.poster-project .project-lightbox-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    justify-self: center;
+  }
+
+  .project-lightbox-dialog.poster-project .project-lightbox-info {
+    max-width: none;
+    padding: 24px;
+  }
+
+  .project-lightbox-dialog.poster-project .project-lightbox-tags {
+    margin: 18px 0;
+  }
+}

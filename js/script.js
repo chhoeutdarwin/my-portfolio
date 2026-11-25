@@ -42,13 +42,16 @@
       "projects.website": "Web Development",
       "projects.football": "Football Player Poster",
       "projects.coffee": "Coffee Campaign",
-      "projects.matcha": "Matcha Campaign",
+      "projects.waterFestivalTitle": "Cambodia Water Festival Poster",
+      "projects.waterFestivalSummary":
+        "A festive poster celebrating Cambodia's Water Festival, featuring a golden dragon boat, floating lotus flowers, and a river scene with traditional pagodas. Designed in Photoshop.",
       "projects.iceLatte": "Ice Latte Campaign",
       "projects.posterConcept": "Poster Design Concept",
       "projects.dashboard": "Dashboard UI",
       "projects.modalSportsTitle": "Sports Poster Design",
       "projects.modalSportsCaption":
         "Sports poster built on contrast and depth: layered cutout, soft shadows, bold type. Fan-made, non-commercial.",
+      "projects.modalProcess": "Process",
       "projects.modalIceTitle": "Ice Latte Campaign",
       "projects.modalIceCaption":
         "Warm coffee gradients, Khmer display typography, soft glow, and clean price tags. Concept work.",
@@ -149,13 +152,16 @@
       "projects.website": "អភិវឌ្ឍន៍វែបសាយ",
       "projects.football": "Football Player Poster",
       "projects.coffee": "Coffee Campaign",
-      "projects.matcha": "Matcha Campaign",
+      "projects.waterFestivalTitle": "ប៉ុស្ត័របុណ្យអុំទូក",
+      "projects.waterFestivalSummary":
+        "ប៉ុស្ត័របុណ្យអុំទូកដ៏រស់រវើក បង្ហាញទូកនាគពណ៌មាស ផ្កាឈូកអណ្តែត និងទេសភាពទន្លេជាមួយវត្តបុរាណ។ រចនាដោយប្រើ Photoshop។",
       "projects.iceLatte": "Ice Latte Campaign",
       "projects.posterConcept": "Poster Design Concept",
       "projects.dashboard": "ផ្ទាំងគ្រប់គ្រង",
       "projects.modalSportsTitle": " Poster កីឡា",
       "projects.modalSportsCaption":
         "Poster កីឡាដែលបង្កើតដោយការប្រៀបធៀប និងជម្រៅ៖ កាត់ស្រទាប់ ស្រមោលស្រាល និងអក្សរចម្បង។ ស្នាដៃគំនិតមិនមែនសម្រាប់ពាណិជ្ជកម្ម។",
+      "projects.modalProcess": "ដំណើរការ",
       "projects.modalIceTitle": "Ice Latte Campaign",
       "projects.modalIceCaption":
         "ពណ៌កាហ្វេស្រទាក់ៗ អក្សរខ្មែរសំរាប់បង្ហាញ ពន្លឺស្រាល និងស្លាកតម្លៃស្អាត។ ស្នាដៃគំនិត។",
@@ -374,6 +380,7 @@
 
   if (projectGrid && projectLightbox && lightboxImage && lightboxTitle) {
     const projectCards = $$(".p", projectGrid);
+    const projectLightboxDialog = $(".project-lightbox-dialog", projectLightbox);
     let lastFocusedCard = null;
 
     const closeLightbox = () => {
@@ -402,11 +409,52 @@
       const modalCaption = image.dataset.i18nCaption
         ? getTranslation(language, image.dataset.i18nCaption)
         : image.dataset.caption || "";
-      lightboxTitle.textContent = modalTitle;
+      const projectData = $("[data-project-details]", card);
+      projectLightboxDialog?.classList.toggle(
+        "poster-project",
+        card.dataset.category === "poster",
+      );
+      const projectLabel = projectData?.dataset.projectLabel || "";
+      const projectTitle = projectData?.dataset.projectTitle || modalTitle;
+      const projectDescription =
+        projectData?.dataset.projectDescription || modalCaption;
+      const projectTools = projectData?.dataset.projectTools || "";
+      const projectFormat = projectData?.dataset.projectFormat || "";
+      const projectDetails = projectData
+        ? $$("li", projectData).map((item) =>
+            item.textContent.replace(/\s+/g, " ").trim(),
+          )
+        : [];
+
+      const lightboxLabel = $("#lightboxLabel");
+      lightboxLabel.textContent = projectLabel;
+      lightboxLabel.hidden = !projectLabel;
+      lightboxTitle.textContent = projectTitle;
       if (lightboxCaption) {
-        lightboxCaption.textContent = modalCaption;
-        lightboxCaption.hidden = !modalCaption;
+        lightboxCaption.textContent = projectDescription;
+        lightboxCaption.hidden = !projectDescription;
       }
+      const lightboxTags = $("#lightboxTags");
+      const lightboxTools = $("#lightboxTools");
+      lightboxTools.textContent = projectTools;
+      lightboxTools.hidden = !projectTools;
+      const lightboxFormat = $("#lightboxFormat");
+      lightboxFormat.textContent = projectFormat;
+      lightboxFormat.hidden = !projectFormat;
+      lightboxTags.hidden = !projectTools && !projectFormat;
+
+      const lightboxDetails = $("#lightboxDetails");
+      const lightboxDivider = $("#lightboxDivider");
+      const lightboxDetailsList = $("#lightboxDetailsList");
+      lightboxDetailsList.replaceChildren(
+        ...projectDetails.map((detail) => {
+          const item = document.createElement("li");
+          item.textContent = detail;
+          return item;
+        }),
+      );
+      lightboxDetails.hidden = !projectDetails.length;
+      lightboxDivider.hidden = !projectDetails.length;
       projectLightbox.hidden = false;
       document.body.classList.add("lightbox-open");
       window.requestAnimationFrame(() =>
