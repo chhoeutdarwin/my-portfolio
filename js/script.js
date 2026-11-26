@@ -14,7 +14,7 @@
       "nav.hire": "Hire Me",
       "hero.portfolio": "My Portfolio",
       "hero.hello": "Hello, I'm ",
-      "hero.role": "Web Developer",
+      "hero.role": " Junior WebDeveloper",
       "hero.lead":
         "I design and build conversion-focused interfaces that look polished, load fast, and feel effortless on every device.",
       "hero.projects": "View Projects",
@@ -110,7 +110,6 @@
       "contact.messagePlaceholder": "Hi! I saw your portfolio and…",
       "contact.send": "Send",
       "contact.inbox": "Messages are sent directly to my inbox",
-      "footer.role": "Web Developer",
       "footer.backTop": "Back to top",
     },
     km: {
@@ -220,7 +219,6 @@
       "contact.messagePlaceholder": "សួស្តី! ខ្ញុំបានមើលផលប្រមុខជំនាញរបស់អ្នក…",
       "contact.send": "ផ្ញើ",
       "contact.inbox": "សារត្រូវបានផ្ញើដោយផ្ទាល់ទៅប្រអប់សំបុត្ររបស់ខ្ញុំ",
-      "footer.role": "អ្នកអភិវឌ្ឍន៍វែបសាយ",
       "footer.backTop": "ត្រឡប់ទៅលើ",
     },
   };
