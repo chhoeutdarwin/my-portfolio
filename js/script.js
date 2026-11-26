@@ -14,7 +14,7 @@
       "nav.hire": "Hire Me",
       "hero.portfolio": "My Portfolio",
       "hero.hello": "Hello, I'm ",
-      "hero.role": " Junior WebDeveloper",
+      "hero.role": " Junior Web Designer",
       "hero.lead":
         "I design and build conversion-focused interfaces that look polished, load fast, and feel effortless on every device.",
       "hero.projects": "View Projects",
@@ -123,7 +123,7 @@
       "nav.hire": "ជួលខ្ញុំ",
       "hero.portfolio": "កម្រងស្នាដៃរបស់ខ្ញុំ",
       "hero.hello": "សួស្តី, ខ្ញុំគឺ ",
-      "hero.role": "អ្នកអភិវឌ្ឍន៍គេហទំព័រ",
+      "hero.role": "អ្នកអភិវឌ្ឍគេហទំព័រ និងអ្នករចនា",
       "hero.lead":
         "ខ្ញុំរចនា និងបង្កើតចំណុចប្រទាក់ដែលស្អាត ឆាប់រហ័ស និងងាយស្រួលប្រើនៅលើគ្រប់ឧបករណ៍។",
       "hero.projects": "មើលគម្រោង",
@@ -151,7 +151,7 @@
       "projects.website": "អភិវឌ្ឍន៍វែបសាយ",
       "projects.football": "Football Player Poster",
       "projects.coffee": "Coffee Campaign",
-      "projects.waterFestivalTitle": "ប៉ុស្ត័របុណ្យអុំទូក",
+      "projects.waterFestivalTitle": "Water Festival Poster",
       "projects.waterFestivalSummary":
         "ប៉ុស្ត័របុណ្យអុំទូកដ៏រស់រវើក បង្ហាញទូកនាគពណ៌មាស ផ្កាឈូកអណ្តែត និងទេសភាពទន្លេជាមួយវត្តបុរាណ។ រចនាដោយប្រើ Photoshop។",
       "projects.iceLatte": "Ice Latte Campaign",
