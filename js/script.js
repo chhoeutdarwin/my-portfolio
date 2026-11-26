@@ -394,12 +394,12 @@
       lastFocusedCard?.focus();
     };
 
-    const openLightbox = (card) => {
+    const openLightbox = (card, focusTarget = card) => {
       const image = $("img", card);
       const title = $(".h3", card);
       if (!image || !title) return;
 
-      lastFocusedCard = card;
+      lastFocusedCard = focusTarget;
       lightboxImage.src = image.currentSrc || image.src;
       lightboxImage.alt = image.alt;
       const language = document.documentElement.lang === "km" ? "km" : "en";
@@ -411,8 +411,8 @@
         : image.dataset.caption || "";
       const projectData = $("[data-project-details]", card);
       projectLightboxDialog?.classList.toggle(
-        "poster-project",
-        card.dataset.category === "poster",
+        "project-with-details",
+        Boolean(projectData),
       );
       const projectLabel = projectData?.dataset.projectLabel || "";
       const projectTitle = projectData?.dataset.projectTitle || modalTitle;
@@ -455,6 +455,19 @@
       );
       lightboxDetails.hidden = !projectDetails.length;
       lightboxDivider.hidden = !projectDetails.length;
+      const lightboxActions = $("#lightboxActions");
+      const lightboxAction = $("#lightboxAction");
+      const projectLink = $(".project-links a", card);
+      const actionLabel = projectData?.dataset.projectActionLabel || "";
+      if (projectLink && actionLabel) {
+        lightboxAction.href = projectLink.href;
+        lightboxAction.textContent = actionLabel;
+        lightboxActions.hidden = false;
+      } else {
+        lightboxAction.removeAttribute("href");
+        lightboxAction.textContent = "";
+        lightboxActions.hidden = true;
+      }
       projectLightbox.hidden = false;
       document.body.classList.add("lightbox-open");
       window.requestAnimationFrame(() =>
@@ -464,22 +477,27 @@
     };
 
     projectCards.forEach((card) => {
-      if ($(".project-links a", card)) return;
-      card.setAttribute("tabindex", "0");
-      card.setAttribute("role", "button");
-      card.setAttribute(
+      const projectLink = $(".project-links a", card);
+      const hasThumbnailModal = card.hasAttribute("data-project-modal");
+      if (projectLink && !hasThumbnailModal) return;
+      const trigger = projectLink ? $(".thumb", card) : card;
+      if (!trigger) return;
+
+      trigger.setAttribute("tabindex", "0");
+      trigger.setAttribute("role", "button");
+      trigger.setAttribute(
         "aria-label",
         `Open ${$(".h3", card)?.textContent.trim() || "project"} preview`,
       );
-      card.addEventListener("click", (event) => {
+      trigger.addEventListener("click", (event) => {
         if (event.target.closest("a")) return;
-        openLightbox(card);
+        openLightbox(card, trigger);
       });
-      card.addEventListener("keydown", (event) => {
+      trigger.addEventListener("keydown", (event) => {
         if (event.target.closest("a")) return;
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          openLightbox(card);
+          openLightbox(card, trigger);
         }
       });
     });
